@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html style="height: 100%;width: 100%;">
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            qytLix's home
+        </title>
+        <link rel="stylesheet" href="../css/head.css"> 
+        
+    </head>
+    <body style="height: 100%;width: 100%;">
+        <div style="height: 100%;width: 100%;">
+            <!-- this is for head -->
+            <div class="headline">
+                <div style="height: 100%; width: 10vh;background-color: aqua; float: left;">
+                    <a href="https://qytlix.github.io/"><img src="../../picture/title.png" alt="title" class="justInIt"></a>
+                </div>
+                <div style="height: 100%;float: left;">
+                    <h1 style="margin: auto;">qytlix Homepage</h1>
+                </div>
+            </div>
+
+            <!-- this is for body -->
+            <div class="bodypart">
+                <!-- centre is context -->
+                <div id="context">
+                    <!-- CONTEXT -->
+                    <!-- here will stick in markdown -->
+                    <div style="padding-left: 10%;
+                    padding-right: 10%;">
+                        <div class="markdown">
+<!-- MARKDOWN BEGINNING -->
+<h1 style="margin: auto;width: 50px;">Hi!</h1>
+
+Here is qytlix.  
+Welcome to my Homepage.  
+
+---
+
+below are some entry for different kinds of masterpieces created by qytlix and psychopie.
+<!-- MARKDOWN ENDING -->
+                        </div>
+                        <div>
+                            <button type="button" onclick="sayQyt()">
+                                <p>this way to qytlix's.</p>
+                            </button>
+                            <button type="button" onclick="sayPsy()">
+                                <p>and this way to psychopie's.</p>
+                            </button>
+                            <button type="button" onclick="resetBelow()">reset</button>
+                        </div>
+                        <div id="qyt"></div>
+                        <div id="psy"></div>
+                    </div>
+                </div>
+                
+            </div>
+            <!-- this is for tail -->
+            <div class="tailline">
+                <div style="margin: auto;width: 50%;text-align: center;height: 100%;">
+                    <h3 class="delTopAndBottom">Created by qytLix</h3>
+                </div>
+            </div>
+        </div>
+    </body>
+    
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+        var m = document.getElementsByClassName('markdown');
+        for (var i = 0; i < m.length; i ++) {
+            var mark = marked.parse(m[i].innerHTML.replace(/^\s+|\s+$/g, ''));
+            m[i].outerHTML = '<div>' + mark + '</div>';
+            console.log( mark );
+        }
+        console.log(m.length);
+    </script>
+    <script>
+        function sayQyt() {
+            document.getElementById("qyt").innerHTML = '<a href=\'https://github.com/qytlix\'>this way to qytlix';
+        }
+        function sayPsy() {
+            document.getElementById("psy").innerHTML = '<a href=\'index.html\'>this way to psychopie</a>';
+        }
+        function resetBelow() {
+            document.getElementById("qyt").innerHTML = '\0';
+            document.getElementById("psy").innerHTML = '\0';
+        }
+    </script>
+</html>

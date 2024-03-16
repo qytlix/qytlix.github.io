@@ -1,0 +1,57 @@
+/* a head of HTML BODY */
+div.headline
+{
+    z-index: 999;
+    position:sticky;
+    top:0;
+    height: 10vh;
+    width: 100%;
+    background-color:rgba(133, 71, 71, 0.7);
+}
+div.tailline
+{
+    position: bottom;
+    height: 20%;
+    background-color: rgba(98, 121, 90, 0.7);
+}
+div.bodypart
+{
+    background-color:rgba(187, 255, 0, 0.13);
+    height: auto;
+    min-height: 70%;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+#menu
+{
+    position:sticky;
+    top: 0;
+    background-color: rgb(90, 106, 121);
+    width: 15%;
+    height: 100vh;
+    
+}
+#context
+{
+    margin:auto;
+    background-color: rgb(255, 239, 251);
+    width: 70%;
+    height: auto;
+    min-height: 50vh;
+}
+.justInIt
+{
+    height: 100%;
+    width: 100%;
+}
+p,h1,h2,h3,h4,h5,h6.delTopAndBottom
+{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+body
+{
+    padding: 0;
+    margin: 0;
+}
