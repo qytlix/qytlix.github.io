@@ -6,9 +6,10 @@
             qytLix's home
         </title>
         <link rel="stylesheet" href="src/css/head.css"> 
-        
+        <link rel="stylesheet" href="src/css/border.css">
+        <link rel="stylesheet" href="src/css/button.css">
     </head>
-    <body style="height: 100%;width: 100%;">
+    <body style="height: 100%;width: 100%;" class="cover">
         <div style="height: 100%;width: 100%;">
             <!-- this is for head -->
             <div class="headline">
@@ -34,6 +35,7 @@
 
 Here is qytlix.  
 Welcome to my Homepage.  
+<p class="cover">Test.</p>
 
 ---
 
@@ -41,13 +43,13 @@ below are some entry for different kinds of masterpieces created by qytlix and p
 <!-- MARKDOWN ENDING -->
                         </div>
                         <div>
-                            <button type="button" onclick="sayQyt()">
+                            <button type="button" onclick="sayQyt()" class="style1">
                                 <p>this way to qytlix's.</p>
                             </button>
-                            <button type="button" onclick="sayPsy()">
+                            <button type="button" onclick="sayPsy()" class="style1">
                                 <p>and this way to psychopie's.</p>
                             </button>
-                            <button type="button" onclick="resetBelow()">reset</button>
+                            <button type="button" onclick="resetBelow()" class="style1">reset</button>
                         </div>
                         <div id="qyt"></div>
                         <div id="psy"></div>

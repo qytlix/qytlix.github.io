@@ -35,7 +35,7 @@ div.bodypart
 #context
 {
     margin:auto;
-    background-color: rgb(255, 239, 251);
+    background-color: rgba(255, 239, 251, 0.596);
     width: 70%;
     height: auto;
     min-height: 50vh;
