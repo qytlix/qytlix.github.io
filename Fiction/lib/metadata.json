@@ -1,0 +1,702 @@
+{
+  "vaultName": "Fiction",
+  "lastExport": 1734845577360,
+  "pluginVersion": "1.8.03",
+  "validBodyClasses": "publish css-settings-manager theme-light show-inline-title show-ribbon",
+  "useCustomHeadContent": false,
+  "useCustomFavicon": false,
+  "files": [
+    "地点介绍/此间/迋廊.md",
+    "地点介绍/此间/此间海.md",
+    "地点介绍/此间/此间.md",
+    "地点介绍/此间/此域.md",
+    "地点介绍/此间/旧此间.md",
+    "地点介绍/此间/以附.md",
+    "地点介绍/幕间/幕间.md",
+    "地点介绍/入间/入间.md",
+    "地点介绍/少间/少间.md",
+    "地点介绍/原间/零域.md",
+    "地点介绍/原间/原间.md",
+    "地点介绍/地点命名规则.md",
+    "番外/岁依璃伊的五笔练习2.md",
+    "番外/岁依璃伊的五笔练习.md",
+    "贺焉原间/纪念2024年Lix日.md",
+    "人物介绍/本土角色/编号/青槿.md",
+    "人物介绍/本土角色/编号/青雰.md",
+    "人物介绍/本土角色/编号/青芫.md",
+    "人物介绍/本土角色/编号/青缇.md",
+    "人物介绍/本土角色/编号/青涟.md",
+    "人物介绍/本土角色/编号/霜果.md",
+    "人物介绍/本土角色/编号/识凝.md",
+    "人物介绍/本土角色/编号/见末叶.md",
+    "人物介绍/本土角色/编号/神.md",
+    "人物介绍/本土角色/编号/灿.md",
+    "人物介绍/本土角色/编号/流飒.md",
+    "人物介绍/本土角色/编号/本神.md",
+    "人物介绍/本土角色/编号/尘灵.md",
+    "人物介绍/本土角色/非编号/麻.md",
+    "人物介绍/本土角色/非编号/赭冰.md",
+    "人物介绍/本土角色/非编号/璃伊.md",
+    "人物介绍/本土角色/非编号/戋幕.md",
+    "人物介绍/本土角色/非编号/外麻.md",
+    "人物介绍/本土角色/非编号/依璃伊.md",
+    "人物介绍/本土角色/非编号/依伊.md",
+    "人物介绍/外来角色/桔子.md",
+    "荣蓉潭谈/第二章 时隔半年的忽忆接续.md",
+    "荣蓉潭谈/第一章 将近一月的努力成果 —— 部分二.md",
+    "荣蓉潭谈/第一章 将近一月的努力成果 —— 部分一：准备.md",
+    "五代青史/简介.md",
+    "银杏末叶/附件/世界树科技/空间拉伸间隙.md",
+    "银杏末叶/附件/世界树科技/空间拉伸.md",
+    "银杏末叶/附件/世界树科技/世界树科技.md",
+    "银杏末叶/附件/标准时间.md",
+    "银杏末叶/附件/「频道交流」.md",
+    "银杏末叶/附件/「洪流相对扩增计划」.md",
+    "银杏末叶/附件/「两年相对数据采集」.md",
+    "银杏末叶/正文/第四章 世界树.md",
+    "银杏末叶/正文/第六章 尘灵.md",
+    "银杏末叶/正文/第五章 缇姨.md",
+    "银杏末叶/正文/第二章 洪流.md",
+    "银杏末叶/正文/第三章 青晨.md",
+    "银杏末叶/正文/第一章 见末叶先生.md",
+    "银杏末叶/正文/序 开始了？结束吧！.md",
+    "银杏末叶/简介.md",
+    "声明.md",
+    "lib/fonts/94f2f163d4b698242fef.otf",
+    "lib/fonts/72505e6a122c6acd5471.woff2",
+    "lib/fonts/2d5198822ab091ce4305.woff2",
+    "lib/fonts/c8ba52b05a9ef10f4758.woff2",
+    "lib/fonts/cb10ffd7684cd9836a05.woff2",
+    "lib/fonts/b5f0f109bc88052d4000.woff2",
+    "lib/fonts/cbe0ae49c52c920fd563.woff2",
+    "lib/fonts/535a6cf662596b3bd6a6.woff2",
+    "lib/fonts/70cc7ff27245e82ad414.ttf",
+    "lib/fonts/454577c22304619db035.ttf",
+    "lib/fonts/52ac8f3034507f1d9e53.ttf",
+    "lib/fonts/05b618077343fbbd92b7.ttf",
+    "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
+    "lib/media/874d8b8e340f75575caa.svg",
+    "lib/media/3d6c1bdc4d87cde4de67.svg",
+    "lib/fonts/MathJax_Zero.woff",
+    "lib/fonts/MathJax_Main-Regular.woff",
+    "lib/fonts/MathJax_Main-Bold.woff",
+    "lib/fonts/MathJax_Math-Italic.woff",
+    "lib/fonts/MathJax_Main-Italic.woff",
+    "lib/fonts/MathJax_Math-BoldItalic.woff",
+    "lib/fonts/MathJax_Size1-Regular.woff",
+    "lib/fonts/MathJax_Size2-Regular.woff",
+    "lib/fonts/MathJax_Size3-Regular.woff",
+    "lib/fonts/MathJax_Size4-Regular.woff",
+    "lib/fonts/MathJax_AMS-Regular.woff",
+    "lib/fonts/MathJax_Calligraphic-Regular.woff",
+    "lib/fonts/MathJax_Calligraphic-Bold.woff",
+    "lib/fonts/MathJax_Fraktur-Regular.woff",
+    "lib/fonts/MathJax_Fraktur-Bold.woff",
+    "lib/fonts/MathJax_SansSerif-Regular.woff",
+    "lib/fonts/MathJax_SansSerif-Bold.woff",
+    "lib/fonts/MathJax_SansSerif-Italic.woff",
+    "lib/fonts/MathJax_Script-Regular.woff",
+    "lib/fonts/MathJax_Typewriter-Regular.woff",
+    "lib/fonts/MathJax_Vector-Regular.woff",
+    "lib/fonts/MathJax_Vector-Bold.woff"
+  ],
+  "mainDependencies": [
+    "lib/fonts/94f2f163d4b698242fef.otf",
+    "lib/fonts/72505e6a122c6acd5471.woff2",
+    "lib/fonts/2d5198822ab091ce4305.woff2",
+    "lib/fonts/c8ba52b05a9ef10f4758.woff2",
+    "lib/fonts/cb10ffd7684cd9836a05.woff2",
+    "lib/fonts/b5f0f109bc88052d4000.woff2",
+    "lib/fonts/cbe0ae49c52c920fd563.woff2",
+    "lib/fonts/535a6cf662596b3bd6a6.woff2",
+    "lib/fonts/70cc7ff27245e82ad414.ttf",
+    "lib/fonts/454577c22304619db035.ttf",
+    "lib/fonts/52ac8f3034507f1d9e53.ttf",
+    "lib/fonts/05b618077343fbbd92b7.ttf",
+    "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
+    "lib/media/874d8b8e340f75575caa.svg",
+    "lib/media/3d6c1bdc4d87cde4de67.svg",
+    "lib/fonts/MathJax_Zero.woff",
+    "lib/fonts/MathJax_Main-Regular.woff",
+    "lib/fonts/MathJax_Main-Bold.woff",
+    "lib/fonts/MathJax_Math-Italic.woff",
+    "lib/fonts/MathJax_Main-Italic.woff",
+    "lib/fonts/MathJax_Math-BoldItalic.woff",
+    "lib/fonts/MathJax_Size1-Regular.woff",
+    "lib/fonts/MathJax_Size2-Regular.woff",
+    "lib/fonts/MathJax_Size3-Regular.woff",
+    "lib/fonts/MathJax_Size4-Regular.woff",
+    "lib/fonts/MathJax_AMS-Regular.woff",
+    "lib/fonts/MathJax_Calligraphic-Regular.woff",
+    "lib/fonts/MathJax_Calligraphic-Bold.woff",
+    "lib/fonts/MathJax_Fraktur-Regular.woff",
+    "lib/fonts/MathJax_Fraktur-Bold.woff",
+    "lib/fonts/MathJax_SansSerif-Regular.woff",
+    "lib/fonts/MathJax_SansSerif-Bold.woff",
+    "lib/fonts/MathJax_SansSerif-Italic.woff",
+    "lib/fonts/MathJax_Script-Regular.woff",
+    "lib/fonts/MathJax_Typewriter-Regular.woff",
+    "lib/fonts/MathJax_Vector-Regular.woff",
+    "lib/fonts/MathJax_Vector-Bold.woff"
+  ],
+  "fileInfo": {
+    "地点介绍/此间/迋廊.md": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 319,
+      "exportedPath": "地点介绍/此间/迋廊.html",
+      "dependencies": []
+    },
+    "地点介绍/此间/此间海.md": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 299,
+      "exportedPath": "地点介绍/此间/此间海.html",
+      "dependencies": []
+    },
+    "地点介绍/此间/此间.md": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 333,
+      "exportedPath": "地点介绍/此间/此间.html",
+      "dependencies": []
+    },
+    "地点介绍/此间/此域.md": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 88,
+      "exportedPath": "地点介绍/此间/此域.html",
+      "dependencies": []
+    },
+    "地点介绍/此间/旧此间.md": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 72,
+      "exportedPath": "地点介绍/此间/旧此间.html",
+      "dependencies": []
+    },
+    "地点介绍/此间/以附.md": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 55,
+      "exportedPath": "地点介绍/此间/以附.html",
+      "dependencies": []
+    },
+    "地点介绍/幕间/幕间.md": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 226,
+      "exportedPath": "地点介绍/幕间/幕间.html",
+      "dependencies": []
+    },
+    "地点介绍/入间/入间.md": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 0,
+      "exportedPath": "地点介绍/入间/入间.html",
+      "dependencies": []
+    },
+    "地点介绍/少间/少间.md": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 95,
+      "exportedPath": "地点介绍/少间/少间.html",
+      "dependencies": []
+    },
+    "地点介绍/原间/零域.md": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 479,
+      "exportedPath": "地点介绍/原间/零域.html",
+      "dependencies": []
+    },
+    "地点介绍/原间/原间.md": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 93,
+      "exportedPath": "地点介绍/原间/原间.html",
+      "dependencies": []
+    },
+    "地点介绍/地点命名规则.md": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 631,
+      "exportedPath": "地点介绍/地点命名规则.html",
+      "dependencies": []
+    },
+    "番外/岁依璃伊的五笔练习2.md": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 574,
+      "exportedPath": "番外/岁依璃伊的五笔练习2.html",
+      "dependencies": []
+    },
+    "番外/岁依璃伊的五笔练习.md": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 307,
+      "exportedPath": "番外/岁依璃伊的五笔练习.html",
+      "dependencies": []
+    },
+    "贺焉原间/纪念2024年Lix日.md": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 1206,
+      "exportedPath": "贺焉原间/纪念2024年Lix日.html",
+      "dependencies": []
+    },
+    "人物介绍/本土角色/编号/青槿.md": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 28,
+      "exportedPath": "人物介绍/本土角色/编号/青槿.html",
+      "dependencies": []
+    },
+    "人物介绍/本土角色/编号/青雰.md": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 7,
+      "exportedPath": "人物介绍/本土角色/编号/青雰.html",
+      "dependencies": []
+    },
+    "人物介绍/本土角色/编号/青芫.md": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 7,
+      "exportedPath": "人物介绍/本土角色/编号/青芫.html",
+      "dependencies": []
+    },
+    "人物介绍/本土角色/编号/青缇.md": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 7,
+      "exportedPath": "人物介绍/本土角色/编号/青缇.html",
+      "dependencies": []
+    },
+    "人物介绍/本土角色/编号/青涟.md": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 6,
+      "exportedPath": "人物介绍/本土角色/编号/青涟.html",
+      "dependencies": []
+    },
+    "人物介绍/本土角色/编号/霜果.md": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 6,
+      "exportedPath": "人物介绍/本土角色/编号/霜果.html",
+      "dependencies": []
+    },
+    "人物介绍/本土角色/编号/识凝.md": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 0,
+      "exportedPath": "人物介绍/本土角色/编号/识凝.html",
+      "dependencies": []
+    },
+    "人物介绍/本土角色/编号/见末叶.md": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 2025,
+      "exportedPath": "人物介绍/本土角色/编号/见末叶.html",
+      "dependencies": []
+    },
+    "人物介绍/本土角色/编号/神.md": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 16,
+      "exportedPath": "人物介绍/本土角色/编号/神.html",
+      "dependencies": []
+    },
+    "人物介绍/本土角色/编号/灿.md": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 112,
+      "exportedPath": "人物介绍/本土角色/编号/灿.html",
+      "dependencies": []
+    },
+    "人物介绍/本土角色/编号/流飒.md": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 765,
+      "exportedPath": "人物介绍/本土角色/编号/流飒.html",
+      "dependencies": []
+    },
+    "人物介绍/本土角色/编号/本神.md": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 6,
+      "exportedPath": "人物介绍/本土角色/编号/本神.html",
+      "dependencies": []
+    },
+    "人物介绍/本土角色/编号/尘灵.md": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 6,
+      "exportedPath": "人物介绍/本土角色/编号/尘灵.html",
+      "dependencies": []
+    },
+    "人物介绍/本土角色/非编号/麻.md": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 1069,
+      "exportedPath": "人物介绍/本土角色/非编号/麻.html",
+      "dependencies": []
+    },
+    "人物介绍/本土角色/非编号/赭冰.md": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 0,
+      "exportedPath": "人物介绍/本土角色/非编号/赭冰.html",
+      "dependencies": []
+    },
+    "人物介绍/本土角色/非编号/璃伊.md": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 0,
+      "exportedPath": "人物介绍/本土角色/非编号/璃伊.html",
+      "dependencies": []
+    },
+    "人物介绍/本土角色/非编号/戋幕.md": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 22,
+      "exportedPath": "人物介绍/本土角色/非编号/戋幕.html",
+      "dependencies": []
+    },
+    "人物介绍/本土角色/非编号/外麻.md": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 1081,
+      "exportedPath": "人物介绍/本土角色/非编号/外麻.html",
+      "dependencies": []
+    },
+    "人物介绍/本土角色/非编号/依璃伊.md": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 73,
+      "exportedPath": "人物介绍/本土角色/非编号/依璃伊.html",
+      "dependencies": []
+    },
+    "人物介绍/本土角色/非编号/依伊.md": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 0,
+      "exportedPath": "人物介绍/本土角色/非编号/依伊.html",
+      "dependencies": []
+    },
+    "人物介绍/外来角色/桔子.md": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 57,
+      "exportedPath": "人物介绍/外来角色/桔子.html",
+      "dependencies": []
+    },
+    "荣蓉潭谈/第二章 时隔半年的忽忆接续.md": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 1745,
+      "exportedPath": "荣蓉潭谈/第二章 时隔半年的忽忆接续.html",
+      "dependencies": []
+    },
+    "荣蓉潭谈/第一章 将近一月的努力成果 —— 部分二.md": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 3688,
+      "exportedPath": "荣蓉潭谈/第一章 将近一月的努力成果 —— 部分二.html",
+      "dependencies": []
+    },
+    "荣蓉潭谈/第一章 将近一月的努力成果 —— 部分一：准备.md": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 3083,
+      "exportedPath": "荣蓉潭谈/第一章 将近一月的努力成果 —— 部分一：准备.html",
+      "dependencies": []
+    },
+    "五代青史/简介.md": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 132,
+      "exportedPath": "五代青史/简介.html",
+      "dependencies": []
+    },
+    "银杏末叶/附件/世界树科技/空间拉伸间隙.md": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 259,
+      "exportedPath": "银杏末叶/附件/世界树科技/空间拉伸间隙.html",
+      "dependencies": []
+    },
+    "银杏末叶/附件/世界树科技/空间拉伸.md": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 396,
+      "exportedPath": "银杏末叶/附件/世界树科技/空间拉伸.html",
+      "dependencies": []
+    },
+    "银杏末叶/附件/世界树科技/世界树科技.md": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 295,
+      "exportedPath": "银杏末叶/附件/世界树科技/世界树科技.html",
+      "dependencies": []
+    },
+    "银杏末叶/附件/标准时间.md": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 43,
+      "exportedPath": "银杏末叶/附件/标准时间.html",
+      "dependencies": []
+    },
+    "银杏末叶/附件/「频道交流」.md": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 1395,
+      "exportedPath": "银杏末叶/附件/「频道交流」.html",
+      "dependencies": []
+    },
+    "银杏末叶/附件/「洪流相对扩增计划」.md": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 1763,
+      "exportedPath": "银杏末叶/附件/「洪流相对扩增计划」.html",
+      "dependencies": []
+    },
+    "银杏末叶/附件/「两年相对数据采集」.md": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 967,
+      "exportedPath": "银杏末叶/附件/「两年相对数据采集」.html",
+      "dependencies": []
+    },
+    "银杏末叶/正文/第四章 世界树.md": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 4399,
+      "exportedPath": "银杏末叶/正文/第四章 世界树.html",
+      "dependencies": []
+    },
+    "银杏末叶/正文/第六章 尘灵.md": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 1968,
+      "exportedPath": "银杏末叶/正文/第六章 尘灵.html",
+      "dependencies": []
+    },
+    "银杏末叶/正文/第五章 缇姨.md": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 5711,
+      "exportedPath": "银杏末叶/正文/第五章 缇姨.html",
+      "dependencies": []
+    },
+    "银杏末叶/正文/第二章 洪流.md": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 4568,
+      "exportedPath": "银杏末叶/正文/第二章 洪流.html",
+      "dependencies": []
+    },
+    "银杏末叶/正文/第三章 青晨.md": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 4498,
+      "exportedPath": "银杏末叶/正文/第三章 青晨.html",
+      "dependencies": []
+    },
+    "银杏末叶/正文/第一章 见末叶先生.md": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 3045,
+      "exportedPath": "银杏末叶/正文/第一章 见末叶先生.html",
+      "dependencies": []
+    },
+    "银杏末叶/正文/序 开始了？结束吧！.md": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 2489,
+      "exportedPath": "银杏末叶/正文/序 开始了？结束吧！.html",
+      "dependencies": []
+    },
+    "银杏末叶/简介.md": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 222,
+      "exportedPath": "银杏末叶/简介.html",
+      "dependencies": []
+    },
+    "声明.md": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 101,
+      "exportedPath": "声明.html",
+      "dependencies": []
+    },
+    "lib/fonts/94f2f163d4b698242fef.otf": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 66800,
+      "exportedPath": "lib/fonts/94f2f163d4b698242fef.otf",
+      "dependencies": []
+    },
+    "lib/fonts/72505e6a122c6acd5471.woff2": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 104232,
+      "exportedPath": "lib/fonts/72505e6a122c6acd5471.woff2",
+      "dependencies": []
+    },
+    "lib/fonts/2d5198822ab091ce4305.woff2": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 104332,
+      "exportedPath": "lib/fonts/2d5198822ab091ce4305.woff2",
+      "dependencies": []
+    },
+    "lib/fonts/c8ba52b05a9ef10f4758.woff2": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 98868,
+      "exportedPath": "lib/fonts/c8ba52b05a9ef10f4758.woff2",
+      "dependencies": []
+    },
+    "lib/fonts/cb10ffd7684cd9836a05.woff2": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 106876,
+      "exportedPath": "lib/fonts/cb10ffd7684cd9836a05.woff2",
+      "dependencies": []
+    },
+    "lib/fonts/b5f0f109bc88052d4000.woff2": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 105804,
+      "exportedPath": "lib/fonts/b5f0f109bc88052d4000.woff2",
+      "dependencies": []
+    },
+    "lib/fonts/cbe0ae49c52c920fd563.woff2": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 106108,
+      "exportedPath": "lib/fonts/cbe0ae49c52c920fd563.woff2",
+      "dependencies": []
+    },
+    "lib/fonts/535a6cf662596b3bd6a6.woff2": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 111708,
+      "exportedPath": "lib/fonts/535a6cf662596b3bd6a6.woff2",
+      "dependencies": []
+    },
+    "lib/fonts/70cc7ff27245e82ad414.ttf": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 192740,
+      "exportedPath": "lib/fonts/70cc7ff27245e82ad414.ttf",
+      "dependencies": []
+    },
+    "lib/fonts/454577c22304619db035.ttf": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 161376,
+      "exportedPath": "lib/fonts/454577c22304619db035.ttf",
+      "dependencies": []
+    },
+    "lib/fonts/52ac8f3034507f1d9e53.ttf": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 191568,
+      "exportedPath": "lib/fonts/52ac8f3034507f1d9e53.ttf",
+      "dependencies": []
+    },
+    "lib/fonts/05b618077343fbbd92b7.ttf": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 155288,
+      "exportedPath": "lib/fonts/05b618077343fbbd92b7.ttf",
+      "dependencies": []
+    },
+    "lib/fonts/4bb6ac751d1c5478ff3a.woff2": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 7876,
+      "exportedPath": "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
+      "dependencies": []
+    },
+    "lib/media/874d8b8e340f75575caa.svg": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 317,
+      "exportedPath": "lib/media/874d8b8e340f75575caa.svg",
+      "dependencies": []
+    },
+    "lib/media/3d6c1bdc4d87cde4de67.svg": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 279,
+      "exportedPath": "lib/media/3d6c1bdc4d87cde4de67.svg",
+      "dependencies": []
+    },
+    "lib/fonts/MathJax_Zero.woff": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 1368,
+      "exportedPath": "lib/fonts/MathJax_Zero.woff",
+      "dependencies": []
+    },
+    "lib/fonts/MathJax_Main-Regular.woff": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 34160,
+      "exportedPath": "lib/fonts/MathJax_Main-Regular.woff",
+      "dependencies": []
+    },
+    "lib/fonts/MathJax_Main-Bold.woff": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 34464,
+      "exportedPath": "lib/fonts/MathJax_Main-Bold.woff",
+      "dependencies": []
+    },
+    "lib/fonts/MathJax_Math-Italic.woff": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 19360,
+      "exportedPath": "lib/fonts/MathJax_Math-Italic.woff",
+      "dependencies": []
+    },
+    "lib/fonts/MathJax_Main-Italic.woff": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 20832,
+      "exportedPath": "lib/fonts/MathJax_Main-Italic.woff",
+      "dependencies": []
+    },
+    "lib/fonts/MathJax_Math-BoldItalic.woff": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 19776,
+      "exportedPath": "lib/fonts/MathJax_Math-BoldItalic.woff",
+      "dependencies": []
+    },
+    "lib/fonts/MathJax_Size1-Regular.woff": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 5792,
+      "exportedPath": "lib/fonts/MathJax_Size1-Regular.woff",
+      "dependencies": []
+    },
+    "lib/fonts/MathJax_Size2-Regular.woff": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 5464,
+      "exportedPath": "lib/fonts/MathJax_Size2-Regular.woff",
+      "dependencies": []
+    },
+    "lib/fonts/MathJax_Size3-Regular.woff": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 3244,
+      "exportedPath": "lib/fonts/MathJax_Size3-Regular.woff",
+      "dependencies": []
+    },
+    "lib/fonts/MathJax_Size4-Regular.woff": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 5148,
+      "exportedPath": "lib/fonts/MathJax_Size4-Regular.woff",
+      "dependencies": []
+    },
+    "lib/fonts/MathJax_AMS-Regular.woff": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 40808,
+      "exportedPath": "lib/fonts/MathJax_AMS-Regular.woff",
+      "dependencies": []
+    },
+    "lib/fonts/MathJax_Calligraphic-Regular.woff": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 9600,
+      "exportedPath": "lib/fonts/MathJax_Calligraphic-Regular.woff",
+      "dependencies": []
+    },
+    "lib/fonts/MathJax_Calligraphic-Bold.woff": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 9908,
+      "exportedPath": "lib/fonts/MathJax_Calligraphic-Bold.woff",
+      "dependencies": []
+    },
+    "lib/fonts/MathJax_Fraktur-Regular.woff": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 21480,
+      "exportedPath": "lib/fonts/MathJax_Fraktur-Regular.woff",
+      "dependencies": []
+    },
+    "lib/fonts/MathJax_Fraktur-Bold.woff": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 22340,
+      "exportedPath": "lib/fonts/MathJax_Fraktur-Bold.woff",
+      "dependencies": []
+    },
+    "lib/fonts/MathJax_SansSerif-Regular.woff": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 12660,
+      "exportedPath": "lib/fonts/MathJax_SansSerif-Regular.woff",
+      "dependencies": []
+    },
+    "lib/fonts/MathJax_SansSerif-Bold.woff": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 15944,
+      "exportedPath": "lib/fonts/MathJax_SansSerif-Bold.woff",
+      "dependencies": []
+    },
+    "lib/fonts/MathJax_SansSerif-Italic.woff": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 14628,
+      "exportedPath": "lib/fonts/MathJax_SansSerif-Italic.woff",
+      "dependencies": []
+    },
+    "lib/fonts/MathJax_Script-Regular.woff": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 11852,
+      "exportedPath": "lib/fonts/MathJax_Script-Regular.woff",
+      "dependencies": []
+    },
+    "lib/fonts/MathJax_Typewriter-Regular.woff": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 17604,
+      "exportedPath": "lib/fonts/MathJax_Typewriter-Regular.woff",
+      "dependencies": []
+    },
+    "lib/fonts/MathJax_Vector-Regular.woff": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 1136,
+      "exportedPath": "lib/fonts/MathJax_Vector-Regular.woff",
+      "dependencies": []
+    },
+    "lib/fonts/MathJax_Vector-Bold.woff": {
+      "modifiedTime": 1734845577360,
+      "sourceSize": 1116,
+      "exportedPath": "lib/fonts/MathJax_Vector-Bold.woff",
+      "dependencies": []
+    }
+  }
+}

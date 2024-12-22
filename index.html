@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="src/css/border.css">
         <link rel="stylesheet" href="src/css/button.css">
     </head>
-    <body style="height: 100%;width: 100%;" class="cover">
+    <body style="height: 100%;width: 100%;">
         <div style="height: 100%;width: 100%;">
             <!-- this is for head -->
             <div class="headline">
@@ -29,30 +29,15 @@
                     <!-- here will stick in markdown -->
                     <div style="padding-left: 10%;
                     padding-right: 10%;">
-                        <div class="markdown">
-<!-- MARKDOWN BEGINNING -->
-<h1 style="margin: auto;width: 50px;">Hi!</h1>
+                        <h1 style="margin: auto;width: 50px;">Hi!</h1>
 
-Here is qytlix.  
-Welcome to my Homepage.  
-<p class="cover">Test.</p>
+                        <p>Here is qytlix.</p>
+                        <p>Welcome to my Homepage.</p>  
+                        <p class="cover">Test.</p>
 
----
+                        <br>
 
-below are some entry for different kinds of masterpieces created by qytlix and psychopie.
-<!-- MARKDOWN ENDING -->
-                        </div>
-                        <div>
-                            <button type="button" onclick="sayQyt()" class="style1">
-                                <p>this way to qytlix's.</p>
-                            </button>
-                            <button type="button" onclick="sayPsy()" class="style1">
-                                <p>and this way to psychopie's.</p>
-                            </button>
-                            <button type="button" onclick="resetBelow()" class="style1">reset</button>
-                        </div>
-                        <div id="qyt"></div>
-                        <div id="psy"></div>
+                        <p>This way goto my fictions vault (powered by Obsidian): <a href="Fiction/声明.html">here</a>.</p>
                     </div>
                 </div>
                 
@@ -67,25 +52,5 @@ below are some entry for different kinds of masterpieces created by qytlix and p
     </body>
     
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script>
-        var m = document.getElementsByClassName('markdown');
-        for (var i = 0; i < m.length; i ++) {
-            var mark = marked.parse(m[i].innerHTML.replace(/^\s+|\s+$/g, ''));
-            m[i].outerHTML = '<div>' + mark + '</div>';
-            console.log( mark );
-        }
-        console.log(m.length);
-    </script>
-    <script>
-        function sayQyt() {
-            document.getElementById("qyt").innerHTML = '<a href=\'https://github.com/qytlix\'>this way to qytlix';
-        }
-        function sayPsy() {
-            document.getElementById("psy").innerHTML = '<a href=\'https://github.com/PIETASTE\'>this way to psychopie</a>';
-        }
-        function resetBelow() {
-            document.getElementById("qyt").innerHTML = '\0';
-            document.getElementById("psy").innerHTML = '\0';
-        }
-    </script>
+    
 </html>
