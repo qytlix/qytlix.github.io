@@ -1,0 +1,4 @@
+baseURL = 'https://blog.qyt.li/x/'
+locale = 'en-us'
+title = 'qytlix no blogs'
+theme = "PaperMod"
