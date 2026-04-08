@@ -1,0 +1,20 @@
+---
+title: 在termux上面开启ssd服务
+date: 2026-04-08 11:08:03+08:00
+lastmod: 2026-04-08 11:08:03+08:00
+draft: false
+categories:
+- content
+- tech
+- 技术
+tags:
+- ssh
+- termux
+---
+
+#termux #ssh
+# 启动
+直接运行
+```sh
+sshd
+```

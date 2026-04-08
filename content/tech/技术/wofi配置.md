@@ -1,0 +1,123 @@
+---
+title: wofi配置
+date: 2026-04-08 11:08:03+08:00
+lastmod: 2026-04-08 11:08:03+08:00
+draft: false
+categories:
+- content
+- tech
+- 技术
+tags:
+- 494d64
+- wofi
+- outer-box
+- entry
+- scroll
+- 24273a
+- cad3f5
+- f4dbd6
+- text
+- inner-box
+- input
+- config
+---
+
+#wofi #config 
+启动的时候用`-c`选项指定conf文件即可
+
+```css
+/* Macchiato Rosewater */
+@define-color accent #f4dbd6;
+@define-color txt #cad3f5;
+@define-color bg #24273a;
+@define-color bg2 #494d64;
+
+ * {
+    font-family: 'JetBrains Mono Nerd Font', monospace;
+    font-size: 14px;
+ }
+
+ /* Window */
+ window {
+    margin: 0px;
+    padding: 10px;
+    /* border: 3px solid @accent; */
+    /* border-radius: 7px; */
+    background-color: @bg;
+    animation: slideIn 0.5s ease-in-out both;
+ }
+
+ /* Slide In */
+ @keyframes slideIn {
+    0% {
+       opacity: 0;
+    }
+
+    100% {
+       opacity: 1;
+    }
+ }
+
+ /* Inner Box */
+ #inner-box {
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    background-color: @bg;
+    animation: fadeIn 0.5s ease-in-out both;
+ }
+
+ /* Fade In */
+ @keyframes fadeIn {
+    0% {
+       opacity: 0;
+    }
+
+    100% {
+       opacity: 1;
+    }
+ }
+
+ /* Outer Box */
+ #outer-box {
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    background-color: @bg;
+ }
+
+ /* Scroll */
+ #scroll {
+    margin: 0px;
+    padding: 10px;
+    border: none;
+ }
+
+ /* Input */
+ #input {
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    color: @accent;
+    background-color: @bg2;
+    animation: fadeIn 0.5s ease-in-out both;
+ }
+
+ /* Text */
+ #text {
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    color: @txt;
+    animation: fadeIn 0.5s ease-in-out both;
+ }
+
+ /* Selected Entry */
+ #entry:selected {
+   background-color: @accent;
+ }
+
+ #entry:selected #text {
+    color: @bg;
+ }
+```
