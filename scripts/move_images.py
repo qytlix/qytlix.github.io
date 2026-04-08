@@ -2,6 +2,7 @@
 """
 move_images.py - 移动 Obsidian Vault 中的图片到 Hugo static 目录并更新链接
 支持 ![[wiki]] 和 ![alt](<path>) 或 ![alt](path) 格式
+自动对路径中的空格进行 URL 编码
 用法: python move_images.py <obsidian_vault_dir> <hugo_content_dir> [--static-dir <dir>] [--image-prefix <prefix>]
   --image-prefix: 图片在网页中的 URL 前缀，默认为 /images
                    例如：--image-prefix /x/images 则生成 /x/images/foo.png
@@ -14,6 +15,7 @@ import re
 import shutil
 import argparse
 from pathlib import Path
+from urllib.parse import quote
 
 def find_image_files(content, vault_dir, static_dir, md_file_path, image_prefix):
     """
@@ -45,10 +47,11 @@ def find_image_files(content, vault_dir, static_dir, md_file_path, image_prefix)
             copied_images.add(source_path)
             print(f"已复制图片: {source_path} -> {dest_path}")
         
-        # 构造 URL：image_prefix + "/" + rel_img_path
-        # 确保 image_prefix 不重复添加斜杠
+        # 构造 URL，对路径中的空格等特殊字符进行编码
         prefix = image_prefix.rstrip('/')
-        url = f"{prefix}/{rel_img_path.as_posix()}" if prefix else rel_img_path.as_posix()
+        raw_path = rel_img_path.as_posix()
+        encoded_path = quote(raw_path, safe='/')  # 保留 / 不编码
+        url = f"{prefix}/{encoded_path}" if prefix else encoded_path
         return f"![{img_file}]({url})"
     
     new_content = re.sub(wiki_pattern, replace_wiki, content)
@@ -95,7 +98,9 @@ def find_image_files(content, vault_dir, static_dir, md_file_path, image_prefix)
             print(f"已复制图片: {source_path} -> {dest_path}")
         
         prefix = image_prefix.rstrip('/')
-        url = f"{prefix}/{rel_img_path.as_posix()}" if prefix else rel_img_path.as_posix()
+        raw_path_part = rel_img_path.as_posix()
+        encoded_path = quote(raw_path_part, safe='/')
+        url = f"{prefix}/{encoded_path}" if prefix else encoded_path
         return f"![{alt}]({url})"
     
     new_content = re.sub(md_pattern, replace_md, new_content)
