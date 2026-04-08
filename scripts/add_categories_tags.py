@@ -16,8 +16,15 @@ import yaml
 def extract_tags_from_content(content):
     """从 Markdown 内容中提取 #tag 格式的标签（支持中文）"""
     # 匹配 #后跟字母、数字、下划线、连字符、中文，但不匹配 URL 或代码块内的内容
-    # 简单起见，此处匹配所有 #word，可自行改进
-    pattern = r'(?<!\w)#([\w\u4e00-\u9fff\-]+)'
+    
+    # 第一步：移除代码块（行内代码和围栏代码块）
+    # 注意：必须正确处理嵌套或转义，这里采用简化但实用的方案
+    # 移除行内代码：`...`  （非贪婪匹配，且不能跨行）
+    content = re.sub(r'`[^`\n]*`', '', content)
+    # 移除围栏代码块：``` ... ```  （可以跨行，支持可选语言标识）
+    content = re.sub(r'```[^\n]*\n.*?```', '', content, flags=re.DOTALL)
+
+    pattern = r'(?<!\w)#([a-zA-Z_\u4e00-\u9fff][\w\u4e00-\u9fff\-]*)'
     tags = re.findall(pattern, content)
     # 去重并返回列表
     return list(set(tags))
@@ -66,8 +73,8 @@ def update_frontmatter(file_path, base_path):
     # 获取 categories（如果已存在则覆盖）
     categories = get_categories_from_path(file_path, base_path)
     categories.sort()  # 按顺序排放，以免每次更新的时候产生很多M
-    if categories:
-        fm_data['categories'] = categories
+    if not categories:
+        fm_data['categories'] = ["nocategories"]
     
     # 获取 tags（合并已有的 tags 和从内容中提取的 tags）
     existing_tags = fm_data.get('tags', [])
@@ -77,8 +84,8 @@ def update_frontmatter(file_path, base_path):
     # 合并去重
     all_tags = list(set(existing_tags + content_tags))
     all_tags.sort()  # 按顺序排放，以免每次更新的时候产生很多M
-    if all_tags:
-        fm_data['tags'] = all_tags
+    if not all_tags:
+        fm_data['tags'] = ["notags"]
     
     # 重新生成 Front Matter 字符串
     new_fm_str = yaml.dump(fm_data, allow_unicode=True, sort_keys=False)
