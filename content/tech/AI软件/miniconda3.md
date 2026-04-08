@@ -7,6 +7,8 @@ categories:
 - AI软件
 - content
 - tech
+tags:
+- notags
 ---
 
 /home/qytlix/miniconda3/

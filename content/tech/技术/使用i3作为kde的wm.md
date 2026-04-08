@@ -7,6 +7,8 @@ categories:
 - content
 - tech
 - 技术
+tags:
+- notags
 ---
 
 首先mask作为kde下x11的wm——kwin

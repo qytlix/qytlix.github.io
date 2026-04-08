@@ -7,6 +7,8 @@ categories:
 - content
 - tech
 - 技术
+tags:
+- notags
 ---
 
 禁用：`zypper mr -d <repo>`

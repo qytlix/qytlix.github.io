@@ -7,6 +7,8 @@ categories:
 - Hello-algo阅读笔记
 - content
 - tech
+tags:
+- notags
 ---
 
 由换底公式可得$O(log_m~n)=O(\frac{log_k~n}{log_k~m})=O(log_k~n)$所以可以直接省略底数。

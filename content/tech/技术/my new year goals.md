@@ -7,6 +7,8 @@ categories:
 - content
 - tech
 - 技术
+tags:
+- notags
 ---
 
 After winter vacation, it occurs to me that a new year arrived 2 months ago. It's time to make some new year goals, including learning, daily life and social interaction.
