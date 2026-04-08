@@ -8,11 +8,11 @@ categories:
 - tech
 - 技术
 tags:
+- config
 - flatpak
 - mirror
 - 配置文件
 - 镜像
-- config
 ---
 
 #flatpak

@@ -8,8 +8,8 @@ categories:
 - tech
 - 技术
 tags:
-- power
 - config
+- power
 - tlp
 ---
 

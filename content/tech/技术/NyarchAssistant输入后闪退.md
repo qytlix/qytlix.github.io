@@ -9,8 +9,8 @@ categories:
 - 技术
 tags:
 - issue
-- solution
 - nyarchlinux
+- solution
 ---
 
 #issue #nyarchlinux #solution

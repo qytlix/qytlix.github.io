@@ -9,8 +9,8 @@ categories:
 - 技术
 tags:
 - VNC
-- opensuse
 - config
+- opensuse
 - 安装
 ---
 

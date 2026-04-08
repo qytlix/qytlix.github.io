@@ -8,10 +8,10 @@ categories:
 - tech
 - 技术
 tags:
-- aur
-- pacman
 - archlinux
+- aur
 - package
+- pacman
 ---
 
 #archlinux #aur #pacman #package 

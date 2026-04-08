@@ -8,9 +8,9 @@ categories:
 - tech
 - 技术
 tags:
-- 配置文件
 - config
 - grub
+- 配置文件
 ---
 
 #grub #配置文件 #config

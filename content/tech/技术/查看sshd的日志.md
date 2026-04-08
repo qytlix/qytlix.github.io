@@ -8,8 +8,8 @@ categories:
 - tech
 - 技术
 tags:
-- ssh
 - journal
+- ssh
 - sshd
 ---
 

@@ -8,9 +8,9 @@ categories:
 - tech
 - 技术
 tags:
+- config
 - ghostty
 - hyprland
-- config
 - tty
 ---
 

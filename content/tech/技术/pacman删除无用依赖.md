@@ -8,8 +8,8 @@ categories:
 - tech
 - 技术
 tags:
-- pacman
 - archlinuxwiki
+- pacman
 - 依赖
 ---
 

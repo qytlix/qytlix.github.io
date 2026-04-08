@@ -6,10 +6,11 @@ draft: false
 categories:
 - content
 - tech
+- 技术
 tags:
-- tmux
 - config
 - shell
+- tmux
 ---
 
 #tmux #config #shell 

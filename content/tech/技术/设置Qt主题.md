@@ -8,12 +8,12 @@ categories:
 - tech
 - 技术
 tags:
-- hyprland
-- theme
 - archlinux
 - aur
-- qt
 - config
+- hyprland
+- qt
+- theme
 ---
 
 #qt #theme #config #archlinux #aur #hyprland 

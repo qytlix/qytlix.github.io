@@ -8,10 +8,10 @@ categories:
 - tech
 - 技术
 tags:
-- 浏览器
 - broswer
-- 配置文件
 - config
+- 浏览器
+- 配置文件
 ---
 
 #浏览器 #broswer #配置文件 #config 

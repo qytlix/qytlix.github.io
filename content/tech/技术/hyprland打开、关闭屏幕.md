@@ -6,10 +6,11 @@ draft: false
 categories:
 - content
 - tech
+- 技术
 tags:
 - display
-- screen
 - hyprland
+- screen
 ---
 
 #hyprland #screen #display

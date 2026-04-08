@@ -8,9 +8,9 @@ categories:
 - tech
 - 技术
 tags:
-- 环境
-- sudo
 - config
+- sudo
+- 环境
 ---
 
 #sudo #环境 #config 

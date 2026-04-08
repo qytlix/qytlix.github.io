@@ -8,8 +8,8 @@ categories:
 - tech
 - 技术
 tags:
-- obsidian
 - electron
+- obsidian
 - wofi
 ---
 

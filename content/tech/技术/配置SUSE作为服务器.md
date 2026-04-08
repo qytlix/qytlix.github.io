@@ -8,8 +8,8 @@ categories:
 - tech
 - 技术
 tags:
-- 配置
 - systemctl
+- 配置
 ---
 
 #systemctl #配置 

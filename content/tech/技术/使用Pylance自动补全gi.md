@@ -8,10 +8,10 @@ categories:
 - tech
 - 技术
 tags:
-- vscode
-- 自动补全
 - gnome
 - python
+- vscode
+- 自动补全
 ---
 
 #python #vscode #gnome #自动补全

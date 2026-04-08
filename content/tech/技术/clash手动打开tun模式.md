@@ -6,10 +6,11 @@ draft: false
 categories:
 - content
 - tech
+- 技术
 tags:
 - clash
-- tun
 - config
+- tun
 ---
 
 #clash #config #tun

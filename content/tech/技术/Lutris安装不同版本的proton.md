@@ -8,9 +8,9 @@ categories:
 - tech
 - 技术
 tags:
+- lutris
 - proton
 - wine
-- lutris
 ---
 
 #lutris #proton #wine

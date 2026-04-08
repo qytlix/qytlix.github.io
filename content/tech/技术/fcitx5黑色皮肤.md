@@ -6,6 +6,7 @@ draft: false
 categories:
 - content
 - tech
+- 技术
 tags:
 - config
 - fcitx5

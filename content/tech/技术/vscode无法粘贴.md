@@ -8,8 +8,8 @@ categories:
 - tech
 - 技术
 tags:
-- vscode
 - archlinuxwiki
+- vscode
 ---
 
 #vscode #archlinuxwiki

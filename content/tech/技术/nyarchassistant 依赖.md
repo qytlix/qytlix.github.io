@@ -9,8 +9,8 @@ categories:
 - 技术
 tags:
 - compile
-- 编译
 - 依赖
+- 编译
 ---
 
 #编译 #compile #依赖

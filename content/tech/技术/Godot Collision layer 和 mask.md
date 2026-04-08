@@ -8,8 +8,8 @@ categories:
 - tech
 - 技术
 tags:
-- godot
 - CollisionObject2D
+- godot
 ---
 
 #godot #CollisionObject2D

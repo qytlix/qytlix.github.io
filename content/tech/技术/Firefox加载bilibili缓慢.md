@@ -8,10 +8,10 @@ categories:
 - tech
 - 技术
 tags:
-- broswer
-- firefox
-- config
 - bilibili
+- broswer
+- config
+- firefox
 ---
 
 #broswer #firefox #bilibili #config 

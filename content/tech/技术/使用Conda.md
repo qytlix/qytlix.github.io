@@ -8,9 +8,9 @@ categories:
 - tech
 - 技术
 tags:
-- 环境
-- python
 - conda
+- python
+- 环境
 ---
 
 #python #conda #环境

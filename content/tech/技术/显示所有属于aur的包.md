@@ -9,8 +9,8 @@ categories:
 - 技术
 tags:
 - aur
-- pacman
 - package
+- pacman
 ---
 
 #pacman #package #aur

@@ -9,8 +9,8 @@ categories:
 - 技术
 tags:
 - flatpak
-- 环境
 - 字体
+- 环境
 ---
 
 #flatpak #字体 #环境 

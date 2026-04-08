@@ -8,10 +8,10 @@ categories:
 - tech
 - 技术
 tags:
-- vscode
 - fcitx
-- 输入法
 - fcitx5
+- vscode
+- 输入法
 ---
 
 #输入法 #fcitx5 #fcitx #vscode 

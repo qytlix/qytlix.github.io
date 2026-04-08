@@ -8,10 +8,10 @@ categories:
 - tech
 - 吐槽
 tags:
-- vscode
-- gnome
 - IDE
+- gnome
 - gnome_builder
+- vscode
 ---
 
 #gnome #gnome_builder #vscode #IDE

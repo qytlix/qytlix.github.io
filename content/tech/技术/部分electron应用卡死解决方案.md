@@ -6,14 +6,15 @@ draft: false
 categories:
 - content
 - tech
+- 技术
 tags:
+- candidates
+- config
 - electron
 - fcitx5
 - linuxqq
-- candidates
 - steam
 - test_vars
-- config
 ---
 
 例如`linuxqq`和`steam`。

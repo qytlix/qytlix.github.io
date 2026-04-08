@@ -8,12 +8,12 @@ categories:
 - tech
 - 技术
 tags:
+- auto
 - autostart
 - driver
-- 数位屏
-- auto
-- 驱动
 - start
+- 数位屏
+- 驱动
 ---
 
 经过测验，在`opensuse tumbleweed`中使用良好。
