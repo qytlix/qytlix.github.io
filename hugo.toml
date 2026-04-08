@@ -1,5 +1,15 @@
 baseURL = 'https://blog.qyt.li/x/'
 locale = 'en-us'
 title = 'qytlix no blogs'
-theme = "PaperMod"
+# theme = "PaperMod"
+theme = "reimu"
 publishDir = "public/x"
+
+# 默认解析相对路径
+[markup.goldmark.renderHooks.link]
+  enableDefault = true
+
+# config for theme reimu
+[markup.highlight]
+  guessSyntax = true
+  noClasses = false

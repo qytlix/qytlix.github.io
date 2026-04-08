@@ -8,18 +8,8 @@ categories:
 - tech
 - 技术
 tags:
-- 24273a
-- 494d64
-- cad3f5
-- config
-- entry
-- f4dbd6
-- inner-box
-- input
-- outer-box
-- scroll
-- text
 - wofi
+- config
 ---
 
 #wofi #config 
