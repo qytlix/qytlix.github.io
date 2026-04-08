@@ -14,4 +14,4 @@ categories:
 
 
 从神权基杖上面扣下来的白色宝石的化身。
-![](/x/images/人物介绍/本土角色/编号/图片/kps-003 Lity.png)
+![](/x/images/%E4%BA%BA%E7%89%A9%E4%BB%8B%E7%BB%8D/%E6%9C%AC%E5%9C%9F%E8%A7%92%E8%89%B2/%E7%BC%96%E5%8F%B7/%E5%9B%BE%E7%89%87/kps-003%20Lity.png)
