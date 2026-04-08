@@ -83,7 +83,7 @@ def update_frontmatter(file_path, base_path):
     # 重新生成 Front Matter 字符串
     new_fm_str = yaml.dump(fm_data, allow_unicode=True, sort_keys=False)
     # 添加开头的 --- 和结尾的 ---（yaml.dump 不包含它们）
-    new_content = f"---\n{new_fm_str}---\n{body}"
+    new_content = f"---\n{new_fm_str}---{body}"
     
     with open(file_path, 'w', encoding='utf-8') as f:
         f.write(new_content)
