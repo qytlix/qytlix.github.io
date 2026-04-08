@@ -65,6 +65,7 @@ def update_frontmatter(file_path, base_path):
     
     # 获取 categories（如果已存在则覆盖）
     categories = get_categories_from_path(file_path, base_path)
+    categories.sort()  # 按顺序排放，以免每次更新的时候产生很多M
     if categories:
         fm_data['categories'] = categories
     
@@ -75,6 +76,7 @@ def update_frontmatter(file_path, base_path):
     content_tags = extract_tags_from_content(body)
     # 合并去重
     all_tags = list(set(existing_tags + content_tags))
+    all_tags.sort()  # 按顺序排放，以免每次更新的时候产生很多M
     if all_tags:
         fm_data['tags'] = all_tags
     
