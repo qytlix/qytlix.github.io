@@ -1,0 +1,8 @@
+{{- /* 对于外部链接或非 .md 文件链接，保持原样 */ -}}
+{{- if or (strings.HasPrefix .Destination "http") (not (strings.HasSuffix .Destination ".md")) -}}
+  <a href="{{ .Destination | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}>{{ .Text | safeHTML }}</a>
+{{- else -}}
+  {{- /* 对于内部 .md 文件链接，使用 Hugo 的 ref 短代码来正确解析 */ -}}
+  {{- $relref := relref .Page .Destination -}}
+  <a href="{{ $relref | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}>{{ .Text | safeHTML }}</a>
+{{- end -}}
