@@ -1,19 +1,17 @@
 ---
 title: GRUB修改配置文件
-date: 2026-04-08 11:08:03+08:00
-lastmod: 2026-04-08 11:08:03+08:00
+date: '2025-08-05T16:57:44+08:00'
+lastmod: '2025-02-08T19:12:14+08:00'
 draft: false
 categories:
-- content
-- tech
+- Diary
 - 技术
 tags:
 - config
 - grub
 - 配置文件
 ---
-
-#grub #配置文件 #config
+  
 # 配置文件位置
 ```path
 make的时候的源文件

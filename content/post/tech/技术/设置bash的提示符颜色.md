@@ -1,18 +1,16 @@
 ---
 title: 设置bash的提示符颜色
-date: 2026-04-08 11:08:03+08:00
-lastmod: 2026-04-08 11:08:03+08:00
+date: '2025-08-05T16:57:44+08:00'
+lastmod: '2025-02-12T12:47:53+08:00'
 draft: false
 categories:
-- content
-- tech
+- Diary
 - 技术
 tags:
 - bash
 - config
 ---
-
-#bash #config 
+  
 # 设置参数
 `PS1`就是输出的那一条前置的东西的配置。
 ```bash

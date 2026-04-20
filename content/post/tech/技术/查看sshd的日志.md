@@ -1,19 +1,17 @@
 ---
 title: 查看sshd的日志
-date: 2026-04-08 11:08:03+08:00
-lastmod: 2026-04-08 11:08:03+08:00
+date: '2025-08-05T16:57:44+08:00'
+lastmod: '2025-05-21T23:00:33+08:00'
 draft: false
 categories:
-- content
-- tech
+- Diary
 - 技术
 tags:
 - journal
 - ssh
 - sshd
 ---
-
-#journal #ssh #sshd
+  
 使用`journalctl`
 ```sh
 sudo journalctl -u sshd --since "yyyy-MM-dd" --until "yyyy-MM-dd"

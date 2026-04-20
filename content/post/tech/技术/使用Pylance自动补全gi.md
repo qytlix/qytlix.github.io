@@ -1,11 +1,10 @@
 ---
 title: 使用Pylance自动补全gi
-date: 2026-04-08 11:08:03+08:00
-lastmod: 2026-04-08 11:08:03+08:00
+date: '2025-08-05T16:57:44+08:00'
+lastmod: '2025-03-22T21:44:18+08:00'
 draft: false
 categories:
-- content
-- tech
+- Diary
 - 技术
 tags:
 - gnome
@@ -13,8 +12,7 @@ tags:
 - vscode
 - 自动补全
 ---
-
-#python #vscode #gnome #自动补全
+   
 本机环境`openSUSE Tumbleweed 20250319`，`python313`。
 # 虚拟环境
 ```sh

@@ -1,19 +1,17 @@
 ---
 title: ssh连接关闭
-date: 2026-04-08 11:08:03+08:00
-lastmod: 2026-04-08 11:08:03+08:00
+date: '2025-08-05T16:57:44+08:00'
+lastmod: '2025-05-21T23:08:04+08:00'
 draft: false
 categories:
-- content
-- tech
+- Diary
 - 技术
 tags:
 - ssh
 - sshd
 ---
-
-#ssh #sshd
-[查看sshd的日志]({{< ref "查看sshd的日志" >}})
+ 
+[[查看sshd的日志]]
 ```sh
 sudo journalctl -u sshd --since "2025-05-21"
 ```

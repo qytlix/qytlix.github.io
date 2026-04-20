@@ -1,16 +1,14 @@
 ---
-title: 理想的作品集合
-date: 2026-04-08 10:55:21+08:00
-lastmod: 2026-04-08 10:53:57+08:00
+title: README
+date: '2025-08-05T16:57:43+08:00'
+lastmod: '2025-07-09T22:27:09+08:00'
 draft: false
 categories:
-- content
-- fiction
+- Fiction
 tags:
 - notags
 ---
-
-
+# 理想的作品集合
 
 本目录下的一切小说部分均为纯粹的幻想[^1]。
 从左边的目录开始进入幻想吧！

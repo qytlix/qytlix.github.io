@@ -1,19 +1,17 @@
 ---
 title: 显示所有属于aur的包
-date: 2026-04-08 11:08:03+08:00
-lastmod: 2026-04-08 11:08:03+08:00
+date: '2025-08-05T16:57:44+08:00'
+lastmod: '2025-03-01T18:05:20+08:00'
 draft: false
 categories:
-- content
-- tech
+- Diary
 - 技术
 tags:
 - aur
 - package
 - pacman
 ---
-
-#pacman #package #aur
+  
 查看外部包
 ```sh
 pacman -Qm

@@ -1,18 +1,16 @@
 ---
 title: wofi配置
-date: 2026-04-08 11:08:03+08:00
-lastmod: 2026-04-08 11:08:03+08:00
+date: '2026-02-27T21:08:37+08:00'
+lastmod: '2026-01-09T10:58:05+08:00'
 draft: false
 categories:
-- content
-- tech
+- Diary
 - 技术
 tags:
-- wofi
 - config
+- wofi
 ---
-
-#wofi #config 
+  
 启动的时候用`-c`选项指定conf文件即可
 
 ```css

@@ -1,11 +1,10 @@
 ---
 title: 在opensuse tumbleweed启动tigervnc
-date: 2026-04-08 11:08:03+08:00
-lastmod: 2026-04-08 11:08:03+08:00
+date: '2025-08-05T16:57:44+08:00'
+lastmod: '2025-02-26T23:20:15+08:00'
 draft: false
 categories:
-- content
-- tech
+- Diary
 - 技术
 tags:
 - VNC
@@ -13,8 +12,7 @@ tags:
 - opensuse
 - 安装
 ---
-
-#opensuse #安装 #VNC #config 
+    
 # 安装
 ```sh
 # one can chose tigervnc
@@ -30,11 +28,11 @@ vncpasswd [file]
 ```
 # 启动
 
-> [!Tip]
-> 在`opensuse`中，使用的不是`vncserver`而是`/usr/libexec/vncserver`。
-> 直接用`vncserver`会报错的。
-> 可以在环境变量`PATH`中添加`/usr/libexec`来直接使用`vncserver`。
-
+{{< admonition "tip" "tip" true >}}
+在`opensuse`中，使用的不是`vncserver`而是`/usr/libexec/vncserver`。
+直接用`vncserver`会报错的。
+可以在环境变量`PATH`中添加`/usr/libexec`来直接使用`vncserver`。
+{{< /admonition >}}
 ```sh
 # should set firewall first
 sudo firewall-cmd --add-port=5901/tcp --permanent
@@ -51,5 +49,6 @@ Xvnc -geometry 1920x1080 -depth 24 :1 -rfbauth .vncpasswd
 `.vncpasswd`是在配置的时候用到的`[file]`。
 `-depth 24`是颜色位深，为`24`。
 
-> [!warning]
-> 这一条似乎不能启动`kde plasma`，问题的原因有待探究。
+{{< admonition "warning" "warning" true >}}
+这一条似乎不能启动`kde plasma`，问题的原因有待探究。
+{{< /admonition >}}

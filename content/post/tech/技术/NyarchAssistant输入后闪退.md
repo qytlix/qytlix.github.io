@@ -1,19 +1,17 @@
 ---
 title: NyarchAssistant输入后闪退
-date: 2026-04-08 11:08:03+08:00
-lastmod: 2026-04-08 11:08:03+08:00
+date: '2025-08-05T16:57:44+08:00'
+lastmod: '2025-02-26T23:43:40+08:00'
 draft: false
 categories:
-- content
-- tech
+- Diary
 - 技术
 tags:
 - issue
 - nyarchlinux
 - solution
 ---
-
-#issue #nyarchlinux #solution
+  
 # 问题描述
 出问题的版本：
 `aur/nyarchassistant 0.7.1-1`
@@ -39,13 +37,13 @@ ls /var/cache/pacman/pkg/ | grep package
 sudo pacman -U /path/to/grep/package
 ```
 
-> [!Tip] Tip from kimi
-> 为了避免系统自动升级该软件包，可以将其添加到 `pacman.conf` 的 `IgnorePkg` 配置中：
-> ```ini
-> IgnorePkg = scikit-learn
-> ```
-> 编辑 `/etc/pacman.conf` 文件，在 `[options]` 部分添加上述内容
-
+{{< admonition "tip" "Tip from kimi" true >}}
+为了避免系统自动升级该软件包，可以将其添加到 `pacman.conf` 的 `IgnorePkg` 配置中：
+```ini
+IgnorePkg = scikit-learn
+```
+编辑 `/etc/pacman.conf` 文件，在 `[options]` 部分添加上述内容
+{{< /admonition >}}
 不幸的是，没有相应的版本。
 ### 去Archive下载
 直接使用：
@@ -54,4 +52,4 @@ sudo pacman -U /url/to/package
 ```
 ## 直接使用`flatpak`的方案
 去`github`上面下载官方的包，然后安装即可。
-<mark>确认有效</mark>。
+==确认有效==。

@@ -1,18 +1,16 @@
 ---
 title: vscode和code-oss的抉择
-date: 2026-04-08 11:08:03+08:00
-lastmod: 2026-04-08 11:08:03+08:00
+date: '2025-08-05T16:57:44+08:00'
+lastmod: '2025-02-15T00:26:19+08:00'
 draft: false
 categories:
-- content
-- tech
+- Diary
 - 技术
 tags:
 - code-oss
 - vscode
 ---
-
-#vscode #code-oss
+ 
 # `code-oss`的问题
 不能轻松设置自动补全。
 不能轻松设置云同步。

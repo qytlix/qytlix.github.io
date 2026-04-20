@@ -1,19 +1,17 @@
 ---
 title: nyarchassistant 依赖
-date: 2026-04-08 11:08:03+08:00
-lastmod: 2026-04-08 11:08:03+08:00
+date: '2025-08-05T16:57:44+08:00'
+lastmod: '2025-02-08T19:14:03+08:00'
 draft: false
 categories:
-- content
-- tech
+- Diary
 - 技术
 tags:
 - compile
 - 依赖
 - 编译
 ---
-
-#编译 #compile #依赖
+  
 # 逆天问题
 ## 问题来源
 在`PKGBUILD`里面甚至可以直接修改依赖。

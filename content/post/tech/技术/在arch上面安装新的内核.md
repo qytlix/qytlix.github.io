@@ -1,18 +1,16 @@
 ---
 title: 在arch上面安装新的内核
-date: 2026-04-08 11:08:03+08:00
-lastmod: 2026-04-08 11:08:03+08:00
+date: '2026-02-27T21:08:37+08:00'
+lastmod: '2026-02-27T18:29:46+08:00'
 draft: false
 categories:
-- content
-- tech
+- Diary
 - 技术
 tags:
 - archlinux
 - core
 ---
-
-#archlinux #core
+ 
 直接pacman先安装一个想要的内核，例如archlinuxcn/linux-lily
 ```sh
 sudo pacman -S linux-lily

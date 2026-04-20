@@ -1,16 +1,14 @@
 ---
 title: stable diffusion webui 启动
-date: 2026-04-08 11:08:03+08:00
-lastmod: 2026-04-08 11:08:03+08:00
+date: '2026-04-19T23:01:25+08:00'
+lastmod: '2026-03-16T00:40:20+08:00'
 draft: false
 categories:
-- content
-- tech
+- Diary
 - 技术
 tags:
 - notags
 ---
-
 ```sh
 conda activate sd_webui
 export HF_ENDPOINT=https://hf-mirror.com

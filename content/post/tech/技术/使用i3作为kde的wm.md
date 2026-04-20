@@ -1,16 +1,14 @@
 ---
 title: 使用i3作为kde的wm
-date: 2026-04-08 11:08:03+08:00
-lastmod: 2026-04-08 11:08:03+08:00
+date: '2025-08-05T16:57:44+08:00'
+lastmod: '2025-07-01T13:09:07+08:00'
 draft: false
 categories:
-- content
-- tech
+- Diary
 - 技术
 tags:
 - notags
 ---
-
 首先mask作为kde下x11的wm——kwin
 ```sh
 systemctl --user mask plasma-kwin_x11.service

@@ -1,17 +1,15 @@
 ---
 title: otd驱动
-date: 2026-04-08 11:08:03+08:00
-lastmod: 2026-04-08 11:08:03+08:00
+date: '2026-02-27T21:08:37+08:00'
+lastmod: '2026-01-11T17:07:52+08:00'
 draft: false
 categories:
-- content
-- tech
+- Diary
 - 技术
 tags:
 - opentabletdriver
 ---
 
-#opentabletdriver
 在启动的时候运行`otd-daemon`
 然后禁用内核驱动
 ```sh

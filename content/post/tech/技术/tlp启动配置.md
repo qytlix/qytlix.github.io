@@ -1,19 +1,17 @@
 ---
 title: tlp启动配置
-date: 2026-04-08 11:08:03+08:00
-lastmod: 2026-04-08 11:08:03+08:00
+date: '2026-02-27T21:08:37+08:00'
+lastmod: '2026-02-27T21:08:10+08:00'
 draft: false
 categories:
-- content
-- tech
+- Diary
 - 技术
 tags:
 - config
 - power
 - tlp
 ---
-
-#tlp #power #config 
+   
 ## 关掉其他电源管理
 例如`power-profiles-daemon`等等。
 > 记得关掉socket

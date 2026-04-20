@@ -1,19 +1,17 @@
 ---
 title: iphone使用v2ray
-date: 2026-04-08 11:08:03+08:00
-lastmod: 2026-04-08 11:08:03+08:00
+date: '2026-01-06T21:06:43+08:00'
+lastmod: '2025-10-19T12:50:06+08:00'
 draft: false
 categories:
-- content
-- tech
+- Diary
 - 技术
 tags:
 - iphone
 - proxy
 - v2ray
 ---
-
-#v2ray #iphone #proxy 
+   
 ### 直接使用`v2ray`的软件
 国区的软件都不好用。其他好用的在外区都要付费。
 遂不推荐。

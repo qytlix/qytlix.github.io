@@ -1,19 +1,17 @@
 ---
 title: clash手动打开tun模式
-date: 2026-04-08 11:08:03+08:00
-lastmod: 2026-04-08 11:08:03+08:00
+date: '2026-04-19T23:01:25+08:00'
+lastmod: '2026-03-13T18:33:39+08:00'
 draft: false
 categories:
-- content
-- tech
+- Diary
 - 技术
 tags:
 - clash
 - config
 - tun
 ---
-
-#clash #config #tun
+  
 在clash启动的时候运行`sudo clash-verge-service'即可。
 举例说明，修改了`Exec`字段。
 ```desktop

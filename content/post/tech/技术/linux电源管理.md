@@ -1,24 +1,31 @@
 ---
 title: linux电源管理
-date: 2026-04-08 11:08:03+08:00
-lastmod: 2026-04-08 11:08:03+08:00
+date: '2026-02-27T21:08:37+08:00'
+lastmod: '2026-02-27T20:53:51+08:00'
 draft: false
 categories:
-- content
-- tech
+- Diary
 - 技术
 tags:
+- an1-zhuang1-yu3-qi3-yong4
+- an1-zhuang1-yu3-shi3-yong4
+- di1-dian4-liang4-zi4-dong4-xiu1-mian2-bi4-mian3-dian4-chi2-hao4-jin4-guan1-ji1
+- guan1-jian4-zhi3-biao1-jie3-du2
+- he2-xin1-gong1-neng2
+- he2-xin1-mu4-biao1-jiang4-di1-gong1-hao4-yan2-chang2-shi3-yong4-shi2-jian1
+- he2-xin1-mu4-biao1-shi4-fang4-xing4-neng2-bi4-mian3-guo4-du4-hao4-dian4
 - manage
+- mu4-lu4
+- pei4-zhi4-wen2-jian4
 - power
 ---
-
-#power #manage
+ 
 来源： https://geek-blogs.com/blog/arch-linux-power-management
 # Arch Linux 电源管理完全指南：从基础到高级优化
 
 Arch Linux 以其轻量、灵活和高度可定制的特性深受技术爱好者喜爱，但这种灵活性也意味着电源管理（尤其是笔记本电脑等移动设备）通常需要用户手动配置。良好的电源管理不仅能显著延长电池续航，还能减少发热、降低噪音并提升系统稳定性。本文将从基础概念、核心工具、最佳实践、配置示例到故障排除，全面讲解 Arch Linux 电源管理的技术细节，帮助你打造高效、稳定的电源管理方案。
 
-## 目录[#](https://geek-blogs.com/blog/arch-linux-power-management/#mu4-lu4)
+## 目录[#](https://geek-blogs.com/blog/arch-linux-power-management/)
 
 1. [电源管理基础概念](https://geek-blogs.com/blog/arch-linux-power-management/#1-%E7%94%B5%E6%BA%90%E7%AE%A1%E7%90%86%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5)
 2. [核心组件与工具](https://geek-blogs.com/blog/arch-linux-power-management/#2-%E6%A0%B8%E5%BF%83%E7%BB%84%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7)
@@ -75,7 +82,7 @@ Arch Linux 电源管理依赖内核模块、用户空间工具与服务的协同
 
 **TLP**（TLP - Linux Advanced Power Management）是最流行的电源管理工具，通过后台服c务自动调整系统参数（CPU 频率、硬盘休眠、Wi-Fi 功耗等），无需用户干预。
 
-#### 安装与启用：[#](https://geek-blogs.com/blog/arch-linux-power-management/#an1-zhuang1-yu3-qi3-yong4)
+#### 安装与启用：[#](https://geek-blogs.com/blog/arch-linux-power-management/)
 
 ```
 # 安装 TLP
@@ -87,7 +94,7 @@ sudo systemctl enable --now tlp.service
 sudo pacman -S tp_smapi-dkms acpi_call-dkms  # 支持电池阈值、风扇控制等 ThinkPad 特有功能
 ```
 
-#### 核心功能：[#](https://geek-blogs.com/blog/arch-linux-power-management/#he2-xin1-gong1-neng2)
+#### 核心功能：[#](https://geek-blogs.com/blog/arch-linux-power-management/)
 
 - 自动区分电池/AC 模式，应用不同配置；
 - 控制 CPU 调控器、频率范围、涡轮增压（Turbo Boost）；
@@ -95,7 +102,7 @@ sudo pacman -S tp_smapi-dkms acpi_call-dkms  # 支持电池阈值、风扇控制
 - 无线电设备（Wi-Fi/蓝牙）自动关闭（仅电池模式）；
 - 电池保护（设置充电阈值，如 ThinkPad 充电至 80% 以延长电池寿命）。
 
-#### 配置文件：[#](https://geek-blogs.com/blog/arch-linux-power-management/#pei4-zhi4-wen2-jian4)
+#### 配置文件：[#](https://geek-blogs.com/blog/arch-linux-power-management/)
 
 主配置文件为 `/etc/tlp.conf`，修改后需重启服务生效：`sudo systemctl restart tlp`。
 
@@ -103,7 +110,7 @@ sudo pacman -S tp_smapi-dkms acpi_call-dkms  # 支持电池阈值、风扇控制
 
 **Powertop** 是 Intel 开发的功耗诊断工具，可实时显示系统功耗、设备唤醒频率、进程耗电排行，帮助定位耗电异常。
 
-#### 安装与使用：[#](https://geek-blogs.com/blog/arch-linux-power-management/#an1-zhuang1-yu3-shi3-yong4)
+#### 安装与使用：[#](https://geek-blogs.com/blog/arch-linux-power-management/)
 
 ```
 sudo pacman -S powertop
@@ -115,7 +122,7 @@ sudo powertop --calibrate
 sudo powertop
 ```
 
-#### 关键指标解读：[#](https://geek-blogs.com/blog/arch-linux-power-management/#guan1-jian4-zhi3-biao1-jie3-du2)
+#### 关键指标解读：[#](https://geek-blogs.com/blog/arch-linux-power-management/)
 
 - **Power usage**：实时功耗（单位：W），电池模式下应低于 10W（视设备而定）；
 - **Wakeups per second**：每秒唤醒次数（越低越好，理想值 < 100），高唤醒通常由频繁活动的进程（如后台服务、定时器）导致；
@@ -181,7 +188,7 @@ IdleActionSec=10min  # 闲置时间阈值
 
 ### 3.1 电池模式：延长续航[#](https://geek-blogs.com/blog/arch-linux-power-management/#31-dian4-chi2-mo2-shi4-yan2-chang2-xu4-hang2)
 
-#### 核心目标：降低功耗，延长使用时间[#](https://geek-blogs.com/blog/arch-linux-power-management/#he2-xin1-mu4-biao1-jiang4-di1-gong1-hao4-yan2-chang2-shi3-yong4-shi2-jian1)
+#### 核心目标：降低功耗，延长使用时间[#](https://geek-blogs.com/blog/arch-linux-power-management/)
 
 1. **启用 TLP 电池配置**：  
     在 `/etc/tlp.conf` 中确保电池模式参数：
@@ -219,7 +226,7 @@ IdleActionSec=10min  # 闲置时间阈值
 
 ### 3.2 AC 模式：性能与稳定性平衡[#](https://geek-blogs.com/blog/arch-linux-power-management/#32-ac-mo2-shi4-xing4-neng2-yu3-wen3-ding4-xing4-ping2-heng2)
 
-#### 核心目标：释放性能，避免过度耗电[#](https://geek-blogs.com/blog/arch-linux-power-management/#he2-xin1-mu4-biao1-shi4-fang4-xing4-neng2-bi4-mian3-guo4-du4-hao4-dian4)
+#### 核心目标：释放性能，避免过度耗电[#](https://geek-blogs.com/blog/arch-linux-power-management/)
 
 1. **TLP AC 配置**：
     
@@ -317,7 +324,7 @@ DISK_IDLE_SECS_ON_BAT=2  # 电池模式 2 秒无操作休眠
 
 ### 4.3 自动挂起与低电量保护[#](https://geek-blogs.com/blog/arch-linux-power-management/#43-zi4-dong4-gua4-qi3-yu3-di1-dian4-liang4-bao3-hu4)
 
-#### 低电量自动休眠（避免电池耗尽关机）：[#](https://geek-blogs.com/blog/arch-linux-power-management/#di1-dian4-liang4-zi4-dong4-xiu1-mian2-bi4-mian3-dian4-chi2-hao4-jin4-guan1-ji1)
+#### 低电量自动休眠（避免电池耗尽关机）：[#](https://geek-blogs.com/blog/arch-linux-power-management/)
 
 1. 使用 `acpi_listen` 监控电池事件，结合脚本触发休眠：
     

@@ -1,11 +1,10 @@
 ---
 title: How To Ask Questions The Smart Way
-date: 2026-04-08 11:08:03+08:00
-lastmod: 2026-04-08 11:08:03+08:00
+date: '2025-08-05T16:57:43+08:00'
+lastmod: '2025-02-15T00:16:55+08:00'
 draft: false
 categories:
-- content
-- tech
+- Diary
 - 经典老文
 tags:
 - article
@@ -15,8 +14,7 @@ tags:
 - 提问
 - 经典
 ---
-
-#提问 #经典 #ask_questions #classic #article #english 
+      
 ## How To Ask Questions The Smart Way
 ### Eric Steven Raymond
 [Thyrsus Enterprises](http://www.catb.org/~esr/)

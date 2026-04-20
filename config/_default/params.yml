@@ -604,9 +604,9 @@ home_categories:
   content:
     # - categories: # string (single-layer category) or array (multi-layer category)
     #   cover: # empty means random cover
-    - categories: fiction
+    - categories: Fiction
       cover:
-    - categories: tech
+    - categories: Diary
       cover:
 
 ########################################

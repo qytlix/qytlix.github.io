@@ -1,16 +1,14 @@
 ---
 title: my new year goals
-date: 2026-04-08 11:08:03+08:00
-lastmod: 2026-04-08 11:08:03+08:00
+date: '2026-04-19T23:01:25+08:00'
+lastmod: '2026-03-13T23:20:35+08:00'
 draft: false
 categories:
-- content
-- tech
+- Diary
 - 技术
 tags:
 - notags
 ---
-
 After winter vacation, it occurs to me that a new year arrived 2 months ago. It's time to make some new year goals, including learning, daily life and social interaction.
 
 First, as a freshman in ECNU, I should be devoted to learning knowledge. On the one hand, I need to pay more attention to courses, regardless of the number of credits so that I can keep my GPA at an appropriate rank. On the other hand, I should get more extra-curricular information to broaden my horizon and find my future career direction. Not only should I study for my own self, but also help fellow students to evolve into more knowledgeable individuals through sharing notes, teaching them again after class, discussing online through WeChat and so on.

@@ -1,24 +1,20 @@
 ---
 title: 部分electron应用卡死解决方案
-date: 2026-04-08 11:08:03+08:00
-lastmod: 2026-04-08 11:08:03+08:00
+date: '2026-04-19T23:01:25+08:00'
+lastmod: '2026-03-10T21:14:34+08:00'
 draft: false
 categories:
-- content
-- tech
+- Diary
 - 技术
 tags:
-- candidates
 - config
 - electron
 - fcitx5
 - linuxqq
 - steam
-- test_vars
 ---
-
 例如`linuxqq`和`steam`。
-#electron #linuxqq #steam #config #fcitx5 
+     
 ## 报错信息
 ```sh
 ...

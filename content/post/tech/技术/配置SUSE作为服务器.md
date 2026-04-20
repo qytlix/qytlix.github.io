@@ -1,18 +1,16 @@
 ---
 title: 配置SUSE作为服务器
-date: 2026-04-08 11:08:03+08:00
-lastmod: 2026-04-08 11:08:03+08:00
+date: '2026-01-06T21:06:43+08:00'
+lastmod: '2026-01-06T21:03:12+08:00'
 draft: false
 categories:
-- content
-- tech
+- Diary
 - 技术
 tags:
 - systemctl
 - 配置
 ---
-
-#systemctl #配置 
+  
 关闭了一些服务
 ```zsh
 sudo systemctl disable bluetooth.servise # 蓝牙

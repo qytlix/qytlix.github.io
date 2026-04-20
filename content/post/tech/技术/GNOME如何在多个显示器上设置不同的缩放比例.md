@@ -1,16 +1,14 @@
 ---
 title: GNOME如何在多个显示器上设置不同的缩放比例
-date: 2026-04-08 11:08:03+08:00
-lastmod: 2026-04-08 11:08:03+08:00
+date: '2026-01-06T21:06:43+08:00'
+lastmod: '2025-08-05T18:35:53+08:00'
 draft: false
 categories:
-- content
-- tech
+- Diary
 - 技术
 tags:
 - gnome
 - monitor
 ---
-
-#gnome #monitor
+ 
 使用分数缩放。

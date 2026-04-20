@@ -1,19 +1,17 @@
 ---
 title: Lutris安装不同版本的proton
-date: 2026-04-08 11:08:03+08:00
-lastmod: 2026-04-08 11:08:03+08:00
+date: '2026-02-27T21:08:37+08:00'
+lastmod: '2026-01-21T19:09:15+08:00'
 draft: false
 categories:
-- content
-- tech
+- Diary
 - 技术
 tags:
 - lutris
 - proton
 - wine
 ---
-
-#lutris #proton #wine
+  
 现在有两个不同的gui工具
 `ProtonUP-qt`和`protonplus`
 > protonplus是用gtk写的，感觉还行。

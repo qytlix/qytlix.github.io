@@ -1,18 +1,16 @@
 ---
 title: 关闭docker
-date: 2026-04-08 11:08:03+08:00
-lastmod: 2026-04-08 11:08:03+08:00
+date: '2026-01-06T21:06:43+08:00'
+lastmod: '2026-01-05T14:15:33+08:00'
 draft: false
 categories:
-- content
-- tech
+- Diary
 - 技术
 tags:
 - docker
 - systemctl
 ---
-
-#docker #systemctl
+ 
 ```zsh
 sudo systemctl disable --now docker
 sudo systemctl disable docker.socket

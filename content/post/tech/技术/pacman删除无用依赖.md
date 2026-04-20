@@ -1,25 +1,24 @@
 ---
 title: pacman删除无用依赖
-date: 2026-04-08 11:08:03+08:00
-lastmod: 2026-04-08 11:08:03+08:00
+date: '2025-08-05T16:57:44+08:00'
+lastmod: '2025-02-15T00:28:37+08:00'
 draft: false
 categories:
-- content
-- tech
+- Diary
 - 技术
 tags:
 - archlinuxwiki
 - pacman
 - 依赖
 ---
-
-#archlinuxwiki #pacman #依赖 
+   
 # Arch Linux 移除不使用的包
 [原文](https://www.cnblogs.com/james-wangx/p/16111505.html)
 [参考wiki](https://wiki.archlinux.org/title/Pacman/Tips_and_tricks#Removing_unused_packages_(orphans))
 递归地删除包和它的配置文件。
-> [!caution] 悠着点
-> 这个可能会误删一些编译用包
+{{< admonition "caution" "悠着点" true >}}
+这个可能会误删一些编译用包
+{{< /admonition >}}
 ```sh
 pacman -Qtdq | pacman -Rns -
 ```

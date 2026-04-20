@@ -1,11 +1,10 @@
 ---
 title: 设置Qt主题
-date: 2026-04-08 11:08:03+08:00
-lastmod: 2026-04-08 11:08:03+08:00
+date: '2026-02-27T21:08:37+08:00'
+lastmod: '2026-01-10T12:13:27+08:00'
 draft: false
 categories:
-- content
-- tech
+- Diary
 - 技术
 tags:
 - archlinux
@@ -15,8 +14,7 @@ tags:
 - qt
 - theme
 ---
-
-#qt #theme #config #archlinux #aur #hyprland 
+      
 使用`qt6ct-kde`来自AUR
 配置环境变量`hyprland.conf`
 ```conf

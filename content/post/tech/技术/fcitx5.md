@@ -1,11 +1,10 @@
 ---
 title: fcitx5
-date: 2026-04-08 11:08:03+08:00
-lastmod: 2026-04-08 11:08:03+08:00
+date: '2026-01-06T21:06:43+08:00'
+lastmod: '2025-10-18T09:32:29+08:00'
 draft: false
 categories:
-- content
-- tech
+- Diary
 - 技术
 tags:
 - fcitx
@@ -13,8 +12,7 @@ tags:
 - vscode
 - 输入法
 ---
-
-#输入法 #fcitx5 #fcitx #vscode 
+    
 居然在这个上面（gnome）可以用了。
 震惊我10000年。
 注意：[fcitx5漏字调整方案](https://forum.archlinuxcn.org/t/topic/13922)

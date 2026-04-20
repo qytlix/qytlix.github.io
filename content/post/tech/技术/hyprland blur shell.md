@@ -1,11 +1,10 @@
 ---
 title: hyprland blur shell
-date: 2026-04-08 11:08:03+08:00
-lastmod: 2026-04-08 11:08:03+08:00
+date: '2026-02-27T21:08:37+08:00'
+lastmod: '2026-01-25T17:58:10+08:00'
 draft: false
 categories:
-- content
-- tech
+- Diary
 - 技术
 tags:
 - config
@@ -13,8 +12,7 @@ tags:
 - hyprland
 - tty
 ---
-
-#config #tty #ghostty #hyprland 
+    
 在`hyprland`下让`ghostty`的背景毛玻璃：
 ```config
 ~/.config/ghostty/config
