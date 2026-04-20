@@ -35,6 +35,5 @@ Memory: 4590.82 MiB / 15776.00 MiB
      
 在目录`etc/xdg/autostart/`目录中存放登陆启动的文件。
 直接删除`huion`的启动文件即可。
-{{< admonition "caution" "caution" true >}}
-关掉了屏幕的数位屏仍然被判定为一个屏幕，在`windows`和`opensuse tumbleweed`里面都是这样。
-{{< /admonition >}}
+> [!Caution]
+> 关掉了屏幕的数位屏仍然被判定为一个屏幕，在`windows`和`opensuse tumbleweed`里面都是这样。

@@ -16,9 +16,8 @@ tags:
 [原文](https://www.cnblogs.com/james-wangx/p/16111505.html)
 [参考wiki](https://wiki.archlinux.org/title/Pacman/Tips_and_tricks#Removing_unused_packages_(orphans))
 递归地删除包和它的配置文件。
-{{< admonition "caution" "悠着点" true >}}
-这个可能会误删一些编译用包
-{{< /admonition >}}
+> [!caution] 悠着点
+> 这个可能会误删一些编译用包
 ```sh
 pacman -Qtdq | pacman -Rns -
 ```

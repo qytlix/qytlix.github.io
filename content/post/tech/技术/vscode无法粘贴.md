@@ -20,13 +20,10 @@ tags:
 - 移除`editor.action.clipboardPasteAction`键盘快捷键。
 - [降级](https://wiki.archlinuxcn.org/wiki/%E9%99%8D%E7%BA%A7%E8%BD%AF%E4%BB%B6%E5%8C%85 "降级软件包") [electron32](https://archlinux.org/packages/?name=electron32)包 到 32.2.8 版本。
 
-{{< admonition "note" "note" true >}}
-
-{{< /admonition >}}
+> [!note]
 第一种方法有效。
 版本:`electron33 33.4.0-1`,`code 1.96.4-1`
 
-{{< admonition "note" "note" true >}}
-直接安装`microsoft`预编译的`vscode`二进制包可以直接解决问题
-[[vscode无法粘贴|还另外解决了一个问题]]
-{{< /admonition >}}
+> [!note]
+> 直接安装`microsoft`预编译的`vscode`二进制包可以直接解决问题
+> [[vscode无法粘贴|还另外解决了一个问题]]

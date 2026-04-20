@@ -59,23 +59,23 @@ git submodule add <好看皮肤的仓库地址>
 
 往content文件夹里面塞东西即可。
 
-{{< admonition "warning" "元数据" true >}}
-hugo需要文章有元数据（front matter），实例如下
-```
----
-title: This is title
-draft: false
-date: 2026-04-08 11:08:03+08:00
-categories:
-- test
-- only for test
-tag:
-- notag
----
+> [!warning] 元数据
+> hugo需要文章有元数据（front matter），实例如下
+> ```
+> ---
+> title: This is title
+> draft: false
+> date: 2026-04-08 11:08:03+08:00
+> categories:
+> - test
+> - only for test
+> tag:
+> - notag
+> ---
+>
+> More content
+> ```
 
-More content
-```
-{{< /admonition >}}
 ## 预览
 
 运行`hugo server`，按照提示在对应的端口查看网页。

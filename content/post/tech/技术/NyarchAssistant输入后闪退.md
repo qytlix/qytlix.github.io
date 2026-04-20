@@ -37,13 +37,13 @@ ls /var/cache/pacman/pkg/ | grep package
 sudo pacman -U /path/to/grep/package
 ```
 
-{{< admonition "tip" "Tip from kimi" true >}}
-为了避免系统自动升级该软件包，可以将其添加到 `pacman.conf` 的 `IgnorePkg` 配置中：
-```ini
-IgnorePkg = scikit-learn
-```
-编辑 `/etc/pacman.conf` 文件，在 `[options]` 部分添加上述内容
-{{< /admonition >}}
+> [!Tip] Tip from kimi
+> 为了避免系统自动升级该软件包，可以将其添加到 `pacman.conf` 的 `IgnorePkg` 配置中：
+> ```ini
+> IgnorePkg = scikit-learn
+> ```
+> 编辑 `/etc/pacman.conf` 文件，在 `[options]` 部分添加上述内容
+
 不幸的是，没有相应的版本。
 ### 去Archive下载
 直接使用：
