@@ -7,16 +7,7 @@ categories:
 - Diary
 - 技术
 tags:
-- an1-zhuang1-yu3-qi3-yong4
-- an1-zhuang1-yu3-shi3-yong4
-- di1-dian4-liang4-zi4-dong4-xiu1-mian2-bi4-mian3-dian4-chi2-hao4-jin4-guan1-ji1
-- guan1-jian4-zhi3-biao1-jie3-du2
-- he2-xin1-gong1-neng2
-- he2-xin1-mu4-biao1-jiang4-di1-gong1-hao4-yan2-chang2-shi3-yong4-shi2-jian1
-- he2-xin1-mu4-biao1-shi4-fang4-xing4-neng2-bi4-mian3-guo4-du4-hao4-dian4
 - manage
-- mu4-lu4
-- pei4-zhi4-wen2-jian4
 - power
 ---
  
