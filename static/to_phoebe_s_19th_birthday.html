@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#eaf6ff">
+  <meta name="description" content="A birthday celebration for Phoebe Xu">
+  <title>Happy Birthday, Phoebe!</title>
+  <link rel="stylesheet" href="./assets/styles.css">
+  <script src="./assets/app.js" defer></script>
+</head>
+<body>
+  <div class="decorations" aria-hidden="true">
+    <span class="shape circle circle-one"></span><span class="shape triangle triangle-one"></span>
+    <span class="shape circle circle-two"></span><span class="shape triangle triangle-two"></span>
+    <span class="shape circle circle-three"></span><span class="shape triangle triangle-three"></span>
+    <span class="shape circle circle-four"></span><span class="shape triangle triangle-four"></span>
+    <span class="shape circle circle-five"></span>
+  </div>
+  <div class="intro-overlay" id="intro-overlay" aria-label="Birthday greeting">
+    <div class="intro-confetti" aria-hidden="true"><i>✦</i><i>●</i><i>✧</i><i>◆</i><i>✦</i><i>●</i><i>✧</i></div>
+    <p class="intro-message" aria-hidden="true"><span class="intro-line" data-copy="intro-greeting">Happy Birthday</span></p>
+    <button class="skip-intro" id="skip-intro" type="button" data-copy="skip">Skip intro</button>
+  </div>
+  <main class="page" id="main-content" inert>
+    <section class="intro" aria-labelledby="welcome-title">
+      <p class="eyebrow" data-copy="eyebrow">A little celebration</p>
+      <h1 id="welcome-title" data-copy="title">Happy Birthday, Phoebe!</h1>
+      <p class="lead" data-copy="placeholder">A special day, made just for you.</p>
+    </section>
+    <section class="celebration" aria-label="Birthday celebration">
+      <div class="game-mount" id="game" aria-label="Birthday cake">
+        <p class="cake-caption" data-copy="cake-instruction">Drag across the cake to cut it</p>
+        <svg class="cake" id="cake" viewBox="0 0 600 360" role="img" data-copy-aria="cake-alt" aria-label="A replaceable illustrated birthday cake placeholder">
+          <defs><linearGradient id="cake-fill" x2="0" y2="1"><stop stop-color="#fff0f4"/><stop offset=".18" stop-color="#f5a9bd"/><stop offset=".22" stop-color="#ffe4eb"/><stop offset=".30" stop-color="#e987a4"/><stop offset="1" stop-color="#d96e8e"/></linearGradient></defs>
+          <g id="cake-pieces"></g>
+          <line id="cut-preview" class="cut-preview" visibility="hidden" />
+          <g id="knife-placeholder" class="knife-placeholder" visibility="hidden" aria-hidden="true"><circle r="34" fill="#fff" stroke="#6e9fbd" stroke-width="3"/><circle cx="-8" cy="-13" r="6" fill="#50758b"/><path d="M-8 -5 L-8 12 M-8 0 L10 -4 L25 -18 M-8 1 L-21 10 M-8 12 L-18 25 M-8 12 L3 25" fill="none" stroke="#50758b" stroke-width="4" stroke-linecap="round"/><path d="M20 -14 L31 -25 L29 -13 L23 -8 Z" fill="#a9d2e9" stroke="#50758b" stroke-width="2"/><text class="placeholder-label" data-copy="artPlaceholder" x="0" y="47" text-anchor="middle">replaceable placeholder</text></g>
+        <g id="pushers" class="pushers" visibility="hidden" aria-hidden="true">
+          <g id="pusher-left" class="pusher-placeholder"><circle r="22" fill="#fff" stroke="#6e9fbd" stroke-width="2"/><circle cx="-5" cy="-8" r="4" fill="#50758b"/><path d="M-5 -2 L-5 10 M-5 1 L8 2 M-5 10 L-12 19 M-5 10 L4 19" fill="none" stroke="#50758b" stroke-width="3" stroke-linecap="round"/><text class="placeholder-label" y="34" text-anchor="middle" data-copy="artPlaceholder">replaceable placeholder</text></g>
+          <g id="pusher-right" class="pusher-placeholder"><circle r="22" fill="#fff" stroke="#6e9fbd" stroke-width="2"/><circle cx="5" cy="-8" r="4" fill="#50758b"/><path d="M5 -2 L5 10 M5 1 L-8 2 M5 10 L12 19 M5 10 L-4 19" fill="none" stroke="#50758b" stroke-width="3" stroke-linecap="round"/><text class="placeholder-label" y="34" text-anchor="middle" data-copy="artPlaceholder">replaceable placeholder</text></g>
+        </g>
+        </svg>
+        <p class="cake-caption" id="cake-status" aria-live="polite">A little cake, just for you</p>
+        <button class="reset-game" id="reset-game" type="button" hidden>Reset cake</button>
+      </div>
+    </section>
+    <footer><span data-copy="footer">Made with love</span> <span aria-hidden="true">♡</span></footer>
+  </main>
+</body>
+</html>
