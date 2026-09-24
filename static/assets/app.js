@@ -1,14 +1,14 @@
 (() => {
   const copy = {
     en: {
-      eyebrow: "A little celebration", title: "Happy Birthday, Phoebe!", placeholder: "A special day, made just for you.",
-      introGreeting: "Happy Birthday", skip: "Skip intro", cakeCaption: "A little cake, just for you", cakeInstruction: "Drag across the cake to cut it", invalidCut: "That line did not cut the cake. Try another direction.", artPlaceholder: "replaceable placeholder",
-      cakeAlt: "A replaceable illustrated birthday cake placeholder", reset: "Put it back together, please", pusherPlaceholder: "replaceable pushing character", footer: "Made with love"
+      eyebrow: "?!qiang qiang!?", title: "Happy Birthday, Phoebe!", tagline: "A special day, made just for you.",
+      introGreeting: "Happy Birthday", skip: "Skip intro", countdownHeading: "Almost time to celebrate", countdownHint: "Counting down to midnight in West Lafayette", cakeCaption: "A little cake, just for you", cakeInstruction: "Drag across the cake to cut it", invalidCut: "That line did not cut the cake. Try another direction.",
+      cakeAlt: "An illustrated cream and blueberry cake with blue jam, ready to cut", reset: "Put it back together, please", footer: "Made with AI", guideNext: "Continue", guideSkip: "Skip guide", blow: "Blow out candle", musicStop: "Stop music", musicPlay: "Play birthday song", musicBlocked: "Music did not start automatically. Click Play birthday song to retry, or skip the guide.", audioUnavailable: "Web Audio is unavailable in this browser. You can skip the guide.", characterMal: "mal character", characterMizuki: "mizuki character"
     },
     zh: {
-      eyebrow: "一场小小的庆祝", title: "🈷️，生日快乐！", placeholder: "为你准备的特别日子。",
-      introGreeting: "生日快乐", skip: "跳过开场", cakeCaption: "为你准备的小蛋糕", cakeInstruction: "拖动鼠标划过蛋糕来切开它", invalidCut: "这次没有切到蛋糕，再试试别的方向吧。", artPlaceholder: "可替换占位图",
-      cakeAlt: "可替换的生日蛋糕示意图", reset: "可以再来一次喵", pusherPlaceholder: "可替换的推人占位图", footer: "用心制作"
+      eyebrow: "?!强强!?", title: "🈷️，生日快乐！", tagline: "好过兄弟，好过",
+      introGreeting: "生日快乐", skip: "跳过开场", countdownHeading: "等等...", countdownHint: "距 West Lafayette 当地 9 月 25 日 00:00", cakeCaption: "为你准备的小蛋糕", cakeInstruction: "拖动鼠标划过蛋糕来切开它", invalidCut: "这次没有切到蛋糕，再试试别的方向吧。",
+      cakeAlt: "可切割的奶油蓝莓蛋糕插画，带蓝色果酱", reset: "可以再来一次喵", footer: "用♥️制作", guideNext: "继续", guideSkip: "跳过引导", blow: "吹灭蜡烛", musicStop: "停止音乐", musicPlay: "手动播放生日歌", musicBlocked: "生日歌未能自动播放。可点击“手动播放生日歌”重试，或跳过引导。", audioUnavailable: "此浏览器无法使用 Web Audio；你可以跳过引导。", characterMal: "mal 人物", characterMizuki: "水月人物"
     }
   };
   const preferredLanguage = navigator.languages?.[0] ?? navigator.language ?? "en";
@@ -64,51 +64,96 @@
     }
     return text.match(/\P{M}\p{M}*|\p{M}+/gu) ?? Array.from(text);
   };
-  const introLine = overlay.querySelector('[data-copy="intro-greeting"]');
-  const graphemes = segmentGraphemes(copy[language].introGreeting);
-  introLine.textContent = "";
-  graphemes.forEach((grapheme, index) => {
-    const glyph = document.createElement("span");
-    glyph.className = "greeting-glyph";
-    glyph.textContent = grapheme === " " ? "\u00a0" : grapheme;
-    glyph.style.setProperty("--glyph-delay", `${index * 75}ms`);
-    introLine.append(glyph);
-  });
+  // Target instant that gates the opening overlay. 2026-09-25 00:00 local in West
+  // Lafayette (IANA America/Indiana/Indianapolis). On that date Indiana is on EDT
+  // (UTC-4): DST runs 2026-03-08 .. 2026-11-01, so local midnight equals
+  // 2026-09-25T04:00:00Z exactly (epoch ms 1790308800000). Verified by probing the
+  // IANA rules: new Date(TARGET_EPOCH_MS) formats back to 2026-09-25T00:00:00 in
+  // that tz. Single-shot for the 19th birthday; deliberately NOT repeated yearly.
+  const TARGET_EPOCH_MS = 1790308800000;
 
-  if (reducedMotion) {
-    finishIntro();
-  } else {
-    document.body.classList.add("intro-playing");
-    introTimer = window.setTimeout(() => overlay.classList.add("is-leaving"), 2300);
-    finishTimer = window.setTimeout(finishIntro, 3300);
-  }
+  const introLine = overlay.querySelector('[data-copy="intro-greeting"]');
+  const countdown = document.getElementById("intro-countdown");
+  const countdownTime = document.getElementById("countdown-time");
+  let countdownTimer;
+  const formatRemaining = (ms) => {
+    const total = Math.max(0, Math.floor(ms / 1000));
+    const h = Math.floor(total / 3600), m = Math.floor((total % 3600) / 60), s = total % 60;
+    return `${String(h).padStart(2, "0")}:${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`;
+  };
+  const buildGreeting = () => {
+    introLine.textContent = "";
+    segmentGraphemes(copy[language].introGreeting).forEach((grapheme, index) => {
+      const glyph = document.createElement("span");
+      glyph.className = "greeting-glyph";
+      glyph.textContent = grapheme === " " ? "\u00a0" : grapheme;
+      glyph.style.setProperty("--glyph-delay", `${index * 75}ms`);
+      introLine.append(glyph);
+    });
+  };
+  const showCountdown = () => {
+    document.body.classList.add("countdown");
+    if (countdown) countdown.hidden = false;
+    if (skip) skip.hidden = true;
+    tickCountdown();
+    window.clearInterval(countdownTimer);
+    countdownTimer = window.setInterval(tickCountdown, 1000);
+  };
+  const reachTarget = () => {
+    if (finished) return;
+    window.clearInterval(countdownTimer);
+    document.body.classList.remove("countdown");
+    if (countdown) countdown.hidden = true;
+    if (countdownTime) countdownTime.textContent = "00:00:00";
+    if (skip) skip.hidden = false;
+    buildGreeting();
+    if (reducedMotion) {
+      finishIntro();
+    } else {
+      document.body.classList.add("intro-playing");
+      introTimer = window.setTimeout(() => overlay.classList.add("is-leaving"), 2300);
+      finishTimer = window.setTimeout(finishIntro, 3300);
+    }
+  };
+  const tickCountdown = () => {
+    const remaining = TARGET_EPOCH_MS - Date.now();
+    if (!countdownTime || remaining <= 0) { reachTarget(); return; }
+    countdownTime.textContent = formatRemaining(remaining);
+  };
+
+  if (Date.now() < TARGET_EPOCH_MS) showCountdown();
+  else reachTarget();
 
   const cake = document.getElementById("cake");
   const piecesLayer = document.getElementById("cake-pieces");
   const preview = document.getElementById("cut-preview");
-  const knife = document.getElementById("knife-placeholder");
+  const knife = document.getElementById("knife-character");
   const status = document.getElementById("cake-status");
   const resetButton = document.getElementById("reset-game");
   const pushers = document.getElementById("pushers");
   const pusherLeft = document.getElementById("pusher-left");
   const pusherRight = document.getElementById("pusher-right");
+  const knifeArt = knife.querySelector("image");
+  const pusherArts = [pusherLeft.querySelector("image"), pusherRight.querySelector("image")];
+  const faceAlongX = (image, dx) => image.setAttribute("transform", dx < -1e-6 ? "scale(-1 1)" : "scale(1 1)");
   if (!cake) return;
   const setSvgVisibility = (element, value) => { element.setAttribute("visibility", value); element.style.visibility = value; };
   setSvgVisibility(preview, "hidden");
   setSvgVisibility(knife, "hidden");
   setSvgVisibility(pushers, "hidden");
   resetButton.textContent = copy[language].reset;
-  document.querySelectorAll(".pusher-placeholder text").forEach((element) => { element.textContent = copy[language].pusherPlaceholder; });
 
   const INITIAL_POLYGON = [[55, 100], [80, 60], [150, 38], [450, 38], [520, 60], [545, 100], [545, 295], [520, 325], [80, 325], [55, 295]];
-  let pieces = [{ points: INITIAL_POLYGON }];
+  // Offset maps each fragment back onto the single, shared illustration in SVG defs.
+  // Cutting changes both polygon geometry and offset, never the illustration itself.
+  let pieces = [{ points: INITIAL_POLYGON, offset: [0, 0] }];
   const history = [];
   let gesture = null;
   let busy = false;
   let restoring = false;
   let idleTimer = 0;
   let gameActive = false;
-  const idleDelay = 30000;
+  const idleDelay = 3000;
   const hideReset = () => { resetButton.hidden = true; };
   const armIdleTimer = () => {
     window.clearTimeout(idleTimer);
@@ -119,7 +164,7 @@
     }, idleDelay);
   };
   const noteActivity = () => { if (gameActive && history.length) armIdleTimer(); };
-  const clonePieces = (items) => items.map(({ points }) => ({ points: points.map(([x, y]) => [x, y]) }));
+  const clonePieces = (items) => items.map(({ points, offset }) => ({ points: points.map(([x, y]) => [x, y]), offset: [...offset] }));
   const cloneHistoryRecord = (record) => ({
     beforePieces: clonePieces(record.beforePieces),
     afterPieces: clonePieces(record.afterPieces),
@@ -138,12 +183,32 @@
   });
   const drawPieces = () => {
     piecesLayer.replaceChildren();
-    pieces.forEach(({ points }) => {
-      const polygon = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
-      polygon.setAttribute("points", points.map(([x, y]) => `${x},${y}`).join(" "));
-      polygon.setAttribute("class", "cake-piece");
-      polygon.dataset.pieceIndex = String(piecesLayer.childElementCount);
-      piecesLayer.append(polygon);
+    pieces.forEach(({ points, offset }, index) => {
+      const svgNS = "http://www.w3.org/2000/svg";
+      const polygonPoints = points.map(([x, y]) => `${x},${y}`).join(" ");
+      const group = document.createElementNS(svgNS, "g");
+      group.setAttribute("class", "cake-piece");
+      group.dataset.pieceIndex = String(index);
+      const clip = document.createElementNS(svgNS, "clipPath");
+      clip.id = `cake-fragment-${index}`;
+      clip.setAttribute("clipPathUnits", "userSpaceOnUse");
+      const clipPolygon = document.createElementNS(svgNS, "polygon");
+      clipPolygon.setAttribute("points", polygonPoints);
+      clip.append(clipPolygon);
+      const shadow = document.createElementNS(svgNS, "polygon");
+      shadow.setAttribute("points", polygonPoints);
+      shadow.setAttribute("class", "cake-shadow");
+      const art = document.createElementNS(svgNS, "g");
+      art.setAttribute("clip-path", `url(#${clip.id})`);
+      const image = document.createElementNS(svgNS, "use");
+      image.setAttribute("href", "#cake-illustration");
+      image.setAttribute("transform", `translate(${offset[0]} ${offset[1]})`);
+      art.append(image);
+      const edge = document.createElementNS(svgNS, "polygon");
+      edge.setAttribute("points", polygonPoints);
+      edge.setAttribute("class", "cake-edge");
+      group.append(clip, shadow, art, edge);
+      piecesLayer.append(group);
     });
   };
   const pointInPolygon = (point, polygon) => {
@@ -203,8 +268,8 @@
       pusherAnchor: null,
       operations: []
     };
-    pieces.forEach(({ points }, parentIndex) => {
-      if (!segmentHitsPolygon(a, b, points)) { nextPieces.push({ points }); return; }
+    pieces.forEach(({ points, offset }, parentIndex) => {
+      if (!segmentHitsPolygon(a, b, points)) { nextPieces.push({ points, offset }); return; }
       const plusBase = clipPolygon(points, a, b, true), minusBase = clipPolygon(points, a, b, false);
       if (plusBase.length >= 3 && minusBase.length >= 3 && area(plusBase) > 8 && area(minusBase) > 8) {
         const plusDelta = [unitNormal.x * gap, unitNormal.y * gap];
@@ -213,11 +278,11 @@
         const plusChildIndex = nextPieces.length;
         const minusChildIndex = plusChildIndex + 1;
         nextPieces.push(
-          { points: plusBase.map(([x, y]) => [x + plusDelta[0], y + plusDelta[1]]) },
-          { points: minusBase.map(([x, y]) => [x + minusDelta[0], y + minusDelta[1]]) }
+          { points: plusBase.map(([x, y]) => [x + plusDelta[0], y + plusDelta[1]]), offset: [offset[0] + plusDelta[0], offset[1] + plusDelta[1]] },
+          { points: minusBase.map(([x, y]) => [x + minusDelta[0], y + minusDelta[1]]), offset: [offset[0] + minusDelta[0], offset[1] + minusDelta[1]] }
         );
         cutRecord.operations.push({ parentIndex, plusChildIndex, minusChildIndex, plusDelta, minusDelta, cutBoundary });
-      } else nextPieces.push({ points });
+      } else nextPieces.push({ points, offset });
     });
     if (!cutRecord.operations.length || nextPieces.length > 64) return false;
     const boundaryPoints = uniquePoints(cutRecord.operations.flatMap(({ cutBoundary }) => cutBoundary));
@@ -292,6 +357,7 @@
     const [travelStart, travelEnd] = lineThroughSvg(start, end);
     setSvgVisibility(knife, "visible");
     knife.style.transition = "none";
+    faceAlongX(knifeArt, end.x - start.x);
     knife.setAttribute("transform", `translate(${travelStart.x} ${travelStart.y})`);
     void knife.getBoundingClientRect();
     requestAnimationFrame(() => {
@@ -301,7 +367,7 @@
     await new Promise((resolve) => window.setTimeout(resolve, reducedMotion ? 0 : 760));
     setSvgVisibility(knife, "hidden");
     const divided = splitPieces(start, end);
-    status.textContent = divided ? `${copy[language].cakeCaption} · ${history.length}` : copy[language].invalidCut;
+    status.textContent = divided ? copy[language].cakeCaption : copy[language].invalidCut;
     busy = false;
     armIdleTimer();
   });
@@ -368,13 +434,13 @@
         const minusStart = [anchorX - normalX * (pusherClearance + record.gap), anchorY - normalY * (pusherClearance + record.gap)];
         const plusEnd = [plusStart[0] - representative.plusDelta[0], plusStart[1] - representative.plusDelta[1]];
         const minusEnd = [minusStart[0] - representative.minusDelta[0], minusStart[1] - representative.minusDelta[1]];
-        const plusAngle = Math.atan2(-normalY, -normalX) * 180 / Math.PI;
-        const minusAngle = Math.atan2(normalY, normalX) * 180 / Math.PI - 180;
+        faceAlongX(pusherArts[0], plusEnd[0] - plusStart[0]);
+        faceAlongX(pusherArts[1], minusEnd[0] - minusStart[0]);
 
         setSvgVisibility(pushers, "visible");
         pusherLeft.style.transition = pusherRight.style.transition = "none";
-        pusherLeft.setAttribute("transform", transformString(...plusStart, plusAngle));
-        pusherRight.setAttribute("transform", transformString(...minusStart, minusAngle));
+        pusherLeft.setAttribute("transform", transformString(...plusStart));
+        pusherRight.setAttribute("transform", transformString(...minusStart));
         moves.forEach(({ element }) => {
           element.style.transition = "none";
           element.setAttribute("transform", "translate(0 0)");
@@ -388,8 +454,8 @@
         const movingElements = [...moves.map(({ element }) => element), pusherLeft, pusherRight];
         const motionFinished = waitForMotion(movingElements, stepMs);
         moves.forEach(({ element, dx, dy }) => element.setAttribute("transform", `translate(${dx} ${dy})`));
-        pusherLeft.setAttribute("transform", transformString(...plusEnd, plusAngle));
-        pusherRight.setAttribute("transform", transformString(...minusEnd, minusAngle));
+        pusherLeft.setAttribute("transform", transformString(...plusEnd));
+        pusherRight.setAttribute("transform", transformString(...minusEnd));
         await motionFinished;
 
         if (!window.cakeGame.restorePrevious()) throw new Error("Could not restore the preceding cake snapshot");
@@ -435,9 +501,204 @@
     window.clearTimeout(idleTimer);
     if (!document.hidden) armIdleTimer();
   });
-  onIntroFinished = () => { gameActive = true; armIdleTimer(); };
-  if (finished) onIntroFinished();
   drawPieces();
+  const guide = document.getElementById("guide");
+  const guideLine = document.getElementById("guide-line");
+  const guideSpeaker = document.getElementById("guide-speaker");
+  const guideHint = document.getElementById("guide-hint");
+  const guideCharacter = document.getElementById("guide-character");
+  const guideArt = document.getElementById("guide-art");
+  const guideArtFallback = document.getElementById("guide-art-fallback");
+  const guideNext = document.getElementById("guide-next");
+  const blowButton = document.getElementById("blow-candle");
+  const musicButton = document.getElementById("music-toggle");
+  const candle = document.getElementById("guide-candle");
+  const characterArtwork = (role, type, face) => {
+    if (role === "mizuki") return type === "knife" ? "mizuki knife.png" : "mizuki ori.png";
+    if (face === "happy") return "mal face happy.png";
+    return `mal ${["ori", "idea", "hug", "go"].includes(type) ? type : "ori"}.png`;
+  };
+  const setCharacterState = (role, type, face = "normal") => {
+    guideCharacter.dataset.role = role;
+    guideCharacter.dataset.type = type;
+    guideCharacter.dataset.face = face;
+    guideCharacter.setAttribute("aria-label", role === "mizuki" ? copy[language].characterMizuki : copy[language].characterMal);
+    guideArtFallback.textContent = ({ ori: "✿", idea: "💡", hug: "♡", go: "➜", knife: "🔪" })[type] ?? "✿";
+    guideArt.src = `./assets/pictures/${encodeURIComponent(characterArtwork(role, type, face))}`;
+  };
+  guideArt.addEventListener("error", () => { guideArtFallback.hidden = false; });
+  guideArt.addEventListener("load", () => { guideArtFallback.hidden = true; });
+  let scorePromise;
+  let audioContext = null, activeOscillators = [], songTimer = 0, songPlaying = false, audioGeneration = 0, musicBlocked = false;
+  const stopSong = (closeContext = false) => {
+    audioGeneration++;
+    window.clearTimeout(songTimer);
+    activeOscillators.forEach((oscillator) => { try { oscillator.stop(); } catch {} });
+    activeOscillators = [];
+    songPlaying = false;
+    if (closeContext && audioContext) { void audioContext.close(); audioContext = null; }
+  };
+  const playSong = async () => {
+    const generation = audioGeneration;
+    const Audio = window.AudioContext || window.webkitAudioContext;
+    try {
+      if (!Audio) throw new Error("Web Audio unavailable");
+      audioContext ??= new Audio();
+      await audioContext.resume();
+      if (generation !== audioGeneration) return;
+      if (audioContext.state !== "running") throw new Error("AudioContext was not permitted");
+      scorePromise ??= fetch("./assets/birthday-notes.json").then((response) => {
+        if (!response.ok) throw new Error("Could not load the local birthday note data");
+        return response.json();
+      });
+      const score = await scorePromise;
+      if (generation !== audioGeneration) return;
+      musicBlocked = false;
+      guideHint.textContent = "";
+      songPlaying = true;
+      musicButton.hidden = false;
+      musicButton.textContent = copy[language].musicStop;
+      const startAt = audioContext.currentTime + .08;
+      const secondsPerTick = score.tempoMicrosecondsPerQuarter / 1e6 / score.ticksPerQuarter;
+      let songEnd = 0;
+      score.notes.forEach(([onset, duration, midiPitch]) => {
+        const begins = startAt + onset * secondsPerTick;
+        const ends = begins + duration * secondsPerTick * .9;
+        const oscillator = audioContext.createOscillator();
+        const gain = audioContext.createGain();
+        oscillator.type = "sine";
+        oscillator.frequency.value = 440 * (2 ** ((midiPitch - 69) / 12));
+        gain.gain.setValueAtTime(.0001, begins);
+        gain.gain.exponentialRampToValueAtTime(.075, begins + .02);
+        gain.gain.exponentialRampToValueAtTime(.0001, ends);
+        oscillator.connect(gain).connect(audioContext.destination);
+        oscillator.start(begins); oscillator.stop(ends + .01);
+        activeOscillators.push(oscillator);
+        songEnd = Math.max(songEnd, onset + duration);
+      });
+      songTimer = window.setTimeout(() => {
+        songPlaying = false; activeOscillators = [];
+        musicButton.textContent = copy[language].musicPlay;
+      }, songEnd * secondsPerTick * 1000 + 150);
+    } catch (error) {
+      if (generation !== audioGeneration) return;
+      musicBlocked = true;
+      musicButton.hidden = !Audio;
+      if (Audio) musicButton.textContent = copy[language].musicPlay;
+      guideHint.textContent = Audio ? copy[language].musicBlocked : copy[language].audioUnavailable;
+    }
+  };
+  const lines = [
+    { role: "mal", type: "ori", face: "happy", text: "生日快乐喵！" },
+    { role: "mal", type: "ori", text: "其他界面都是双语的哦，只有这里说中文呐。为什么呢～好难猜呀。" },
+    { role: "mal", type: "idea", text: "这是给你的蛋糕喵" },
+    { role: "mal", type: "go", afterType: "ori", text: "先点蜡烛——", action: async () => { await wait(450); if (guideRunning) setSvgVisibility(candle, "visible"); } },
+    { role: "mal", type: "go", afterType: "ori", text: "然后是关灯——", action: async () => { await wait(450); if (!guideRunning) return; const box = candle.getBoundingClientRect(); document.body.style.setProperty("--candle-x", `${box.left + box.width / 2}px`); document.body.style.setProperty("--candle-y", `${box.top + box.height / 2}px`); document.body.classList.add("guide-dark"); } },
+    { role: "mal", type: "go", afterType: "ori", text: "生日歌启动——", action: () => { void playSong(); } },
+    { role: "mal", type: "hug", text: "许愿，然后吹蜡烛喵。", action: () => { blowButton.hidden = false; } },
+    { role: "mal", type: "go", text: "好啦，可以吃蛋糕啦w", action: () => { document.body.classList.remove("guide-dark"); setSvgVisibility(candle, "hidden"); } },
+    { role: "mal", type: "go", text: "我请来了水月和你一起切蛋糕喵。", action: async () => {
+      guideCharacter.classList.add("mizuki");
+      setCharacterState("mizuki", "ori");
+      guideHint.textContent = language === "zh" ? "水月出现" : "Mizuki appears";
+      await wait(500);
+      if (!guideRunning) return;
+      setCharacterState("mizuki", "knife");
+      guideCharacter.classList.add("knife-ready");
+      guideHint.textContent = language === "zh" ? "展示蛋糕刀" : "Cake knife shown";
+    } },
+    { role: "mal", face: "happy", text: "用鼠标在蛋糕上描绘轨迹，开始切切切 ><", action: () => { document.getElementById("guide-character").classList.remove("mizuki", "knife-ready"); } }
+  ];
+  let guideIndex = 0, typingTimer = 0, guideRunning = false, restoreGuideButtonFocus = false;
+  const segmentGuideText = (text) => window.Intl?.Segmenter
+    ? Array.from(new Intl.Segmenter("zh", { granularity: "grapheme" }).segment(text), (part) => part.segment)
+    : Array.from(text);
+  const renderGuideLine = () => {
+    window.clearInterval(typingTimer);
+    const item = lines[guideIndex];
+    guideSpeaker.textContent = item.role === "mizuki" ? "水月 · mizuki" : "mal";
+    setCharacterState(item.role, item.type ?? "ori", item.face ?? "normal");
+    guideLine.replaceChildren();
+    const chunks = segmentGuideText(item.text);
+    chunks.forEach((glyph) => { const span = document.createElement("span"); span.className = "dialogue-grapheme"; span.textContent = glyph; span.hidden = true; guideLine.append(span); });
+    guideNext.setAttribute("aria-disabled", "true");
+    if (!musicBlocked) guideHint.textContent = "";
+    blowButton.hidden = true;
+    let shown = 0, typingComplete = false;
+    const finishTyping = async () => {
+      if (typingComplete) return;
+      typingComplete = true;
+      window.clearInterval(typingTimer);
+      guideLine.querySelectorAll(".dialogue-grapheme").forEach((glyph) => { glyph.hidden = false; });
+      guideNext.setAttribute("aria-disabled", "true");
+      if (item.action) await item.action();
+      if (!guideRunning) return;
+      if (item.afterType) setCharacterState(item.role, item.afterType, item.face ?? "normal");
+      if (guideIndex !== 6) guideNext.setAttribute("aria-disabled", "false");
+      if (restoreGuideButtonFocus) {
+        (guideIndex === 6 ? blowButton : guideNext).focus();
+        restoreGuideButtonFocus = false;
+      }
+    };
+    if (!chunks.length) void finishTyping();
+    else typingTimer = window.setInterval(() => {
+      if (shown < chunks.length) guideLine.querySelectorAll(".dialogue-grapheme")[shown++].hidden = false;
+      if (shown >= chunks.length) void finishTyping();
+    }, 65);
+  };
+  const stopGuide = () => {
+    window.clearInterval(typingTimer); stopSong(true);
+    document.body.classList.remove("guide-dark");
+    document.body.style.removeProperty("--candle-x"); document.body.style.removeProperty("--candle-y");
+    guide.hidden = true; guideRunning = false; gameActive = true;
+    document.getElementById("game").classList.remove("guide-target");
+    setSvgVisibility(candle, "hidden"); armIdleTimer();
+    document.getElementById("welcome-title").focus();
+  };
+  const startGuide = () => {
+    if (guideRunning) return;
+    guideRunning = true; guideIndex = 0; gameActive = false; guide.hidden = false;
+    document.getElementById("game").classList.add("guide-target");
+    renderGuideLine();
+    document.getElementById("guide-skip").focus();
+  };
+  const unlockAudioFromGesture = () => {
+    const Audio = window.AudioContext || window.webkitAudioContext;
+    if (!Audio) return;
+    audioContext ??= new Audio();
+    if (audioContext.state === "suspended") void audioContext.resume().catch(() => {});
+  };
+  guideNext.addEventListener("click", () => {
+    unlockAudioFromGesture();
+    if (guideNext.getAttribute("aria-disabled") === "true" || !guideRunning) return;
+    if (guideIndex >= lines.length - 1) { stopGuide(); return; }
+    restoreGuideButtonFocus = document.activeElement === guideNext || document.activeElement === blowButton;
+    guideIndex++; renderGuideLine();
+  });
+  blowButton.addEventListener("click", () => {
+    restoreGuideButtonFocus = document.activeElement === blowButton;
+    blowButton.hidden = true; stopSong();
+    document.body.classList.remove("guide-dark");
+    candle.querySelector(".candle-flame").hidden = true;
+    guideIndex = 7; renderGuideLine();
+  });
+  musicButton.addEventListener("click", () => {
+    if (songPlaying) { stopSong(); musicButton.textContent = copy[language].musicPlay; }
+    else { void playSong(); }
+  });
+  document.getElementById("guide-skip").addEventListener("click", stopGuide);
+  document.addEventListener("keydown", (event) => {
+    if (guideRunning && event.key === "Escape") { event.preventDefault(); stopGuide(); }
+  });
+  guide.addEventListener("keydown", (event) => {
+    if (event.key !== "Tab") return;
+    const controls = [...guide.querySelectorAll("button:not([hidden]):not(:disabled)")];
+    const first = controls[0], last = controls.at(-1);
+    if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+    else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+  });
+  window.addEventListener("pagehide", () => stopSong(true));
+
   window.cakeGame = Object.freeze({
     getHistory: () => history.map(({ beforePieces }) => clonePieces(beforePieces)),
     getHistoryRecords: () => history.map(cloneHistoryRecord),
@@ -450,4 +711,6 @@
       return true;
     }
   });
+  onIntroFinished = startGuide;
+  if (finished) onIntroFinished();
 })();

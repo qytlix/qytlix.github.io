@@ -19,30 +19,77 @@
   </div>
   <div class="intro-overlay" id="intro-overlay" aria-label="Birthday greeting">
     <div class="intro-confetti" aria-hidden="true"><i>✦</i><i>●</i><i>✧</i><i>◆</i><i>✦</i><i>●</i><i>✧</i></div>
+    <div class="intro-countdown" id="intro-countdown" role="timer" hidden>
+      <p class="countdown-heading" data-copy="countdownHeading">Almost time to celebrate</p>
+      <p class="countdown-time" id="countdown-time">--:--:--</p>
+      <p class="countdown-hint" data-copy="countdownHint">Counting down to midnight in West Lafayette</p>
+    </div>
     <p class="intro-message" aria-hidden="true"><span class="intro-line" data-copy="intro-greeting">Happy Birthday</span></p>
     <button class="skip-intro" id="skip-intro" type="button" data-copy="skip">Skip intro</button>
   </div>
   <main class="page" id="main-content" inert>
     <section class="intro" aria-labelledby="welcome-title">
       <p class="eyebrow" data-copy="eyebrow">A little celebration</p>
-      <h1 id="welcome-title" data-copy="title">Happy Birthday, Phoebe!</h1>
-      <p class="lead" data-copy="placeholder">A special day, made just for you.</p>
+      <h1 id="welcome-title" tabindex="-1" data-copy="title">Happy Birthday, Phoebe!</h1>
+      <p class="lead" data-copy="tagline">A special day, made just for you.</p>
     </section>
     <section class="celebration" aria-label="Birthday celebration">
       <div class="game-mount" id="game" aria-label="Birthday cake">
         <p class="cake-caption" data-copy="cake-instruction">Drag across the cake to cut it</p>
-        <svg class="cake" id="cake" viewBox="0 0 600 360" role="img" data-copy-aria="cake-alt" aria-label="A replaceable illustrated birthday cake placeholder">
-          <defs><linearGradient id="cake-fill" x2="0" y2="1"><stop stop-color="#fff0f4"/><stop offset=".18" stop-color="#f5a9bd"/><stop offset=".22" stop-color="#ffe4eb"/><stop offset=".30" stop-color="#e987a4"/><stop offset="1" stop-color="#d96e8e"/></linearGradient></defs>
+        <svg class="cake" id="cake" viewBox="0 0 600 360" role="img" data-copy-aria="cake-alt" aria-label="An illustrated cream and blueberry cake with blue jam, ready to cut">
+          <defs>
+            <linearGradient id="cream-base" x1="0" y1="0" x2=".2" y2="1"><stop stop-color="#fffef8"/><stop offset=".55" stop-color="#f5f5ed"/><stop offset="1" stop-color="#e5eade"/></linearGradient>
+            <linearGradient id="jam-glaze" x1="0" y1="0" x2=".7" y2="1"><stop stop-color="#719fd5"/><stop offset=".48" stop-color="#426eaf"/><stop offset="1" stop-color="#284c8b"/></linearGradient>
+            <radialGradient id="berry-skin" cx=".33" cy=".27" r=".8"><stop stop-color="#7696d7"/><stop offset=".46" stop-color="#455d9f"/><stop offset="1" stop-color="#263b73"/></radialGradient>
+            <g id="blueberry"><circle r="10" fill="#273c75" opacity=".18" cx="1" cy="2"/><circle r="9" fill="url(#berry-skin)" stroke="#263d78" stroke-width="1"/><path d="M-3 -2 Q0 -5 3 -2 M-2 0 L0 2 L2 0" fill="none" stroke="#acb9de" stroke-width="1.1" stroke-linecap="round"/><circle cx="-3.5" cy="-4" r="1.4" fill="#e1eafa" opacity=".85"/></g>
+            <g id="cream-rosette"><path d="M-14 2 C-17 -7 -8 -12 -4 -9 C1 -16 9 -12 10 -6 C17 -3 15 6 9 7 C6 14 -3 14 -6 9 C-13 11 -16 7 -14 2Z" fill="#fffcf6" stroke="#dce9e8" stroke-width="1.5"/><path d="M-8 2 C-7 -6 4 -9 7 -2 C10 4 1 9 -3 5 C-6 2 -3 -2 1 -2" fill="none" stroke="#e0eae5" stroke-width="2" stroke-linecap="round"/><circle cx="1" cy="1" r="2.6" fill="#fefefa"/></g>
+            <!-- One fixed-coordinate illustration is shared by every fragment. Only the fragment's mask and offset change. -->
+            <g id="cake-illustration">
+              <rect x="46" y="29" width="508" height="305" fill="url(#cream-base)"/>
+              <path d="M64 68 Q104 47 157 56 C232 39 300 57 374 48 Q471 44 530 75 L530 284 Q463 300 383 280 Q302 298 224 283 Q128 299 68 280Z" fill="#fdfdf7" stroke="#d7e7e4" stroke-width="3"/>
+              <path d="M71 108 C110 78 170 91 208 110 C244 126 270 92 313 101 C366 113 389 80 439 88 Q496 90 529 110 L529 161 C488 135 451 160 413 150 C367 136 348 168 303 148 C270 135 232 166 190 145 C143 125 104 152 71 142Z" fill="url(#jam-glaze)" opacity=".94"/>
+              <path d="M71 111 C119 78 165 94 204 112 C243 131 275 94 314 105 C364 118 398 83 439 92 Q489 88 529 110" fill="none" stroke="#b6d8f1" stroke-width="5" stroke-linecap="round" opacity=".85"/>
+              <path d="M87 165 C130 141 174 188 226 171 C281 151 310 194 365 174 C408 158 472 177 517 163 L517 201 C465 210 424 183 376 205 C325 229 282 184 231 206 C182 229 135 181 87 211Z" fill="#94b8df" opacity=".52"/>
+              <path d="M80 246 C126 225 151 255 201 248 C257 237 285 222 328 241 C375 264 407 219 448 237 Q486 250 526 226 L526 264 C485 280 463 262 431 269 C389 279 362 284 320 264 C269 239 237 273 185 270 Q121 264 80 281Z" fill="url(#jam-glaze)" opacity=".88"/>
+              <path d="M83 245 C132 221 157 260 205 248 C257 232 290 226 326 243 C376 268 404 220 448 239 Q488 252 524 228" fill="none" stroke="#d7eafb" stroke-width="4" stroke-linecap="round" opacity=".9"/>
+              <path d="M100 156 Q137 148 161 159 M263 132 Q292 124 321 136 M414 173 Q446 166 470 175 M191 231 Q214 225 243 231 M347 226 Q371 218 390 225" fill="none" stroke="#f8ffff" stroke-width="3" stroke-linecap="round" opacity=".83"/>
+              <path d="M109 79 Q119 73 128 78 M374 69 Q392 65 407 70 M470 119 Q480 115 491 117 M116 186 Q131 181 143 185 M359 263 Q375 260 386 262" fill="none" stroke="#e6f6ff" stroke-width="2" stroke-linecap="round"/>
+              <g fill="#a9cee7" opacity=".92"><circle cx="160" cy="73" r="3"/><circle cx="223" cy="77" r="2.5"/><circle cx="386" cy="118" r="3"/><circle cx="483" cy="195" r="3"/><circle cx="103" cy="227" r="2.5"/><circle cx="280" cy="274" r="3"/><circle cx="422" cy="221" r="2.5"/><circle cx="317" cy="85" r="2"/></g>
+              <g fill="none" stroke="#b5d8e9" stroke-width="2" stroke-linecap="round"><path d="M179 211 l0 -7 M175 207 l8 0"/><path d="M468 73 l0 -7 M464 69 l8 0"/><path d="M346 285 l0 -7 M342 281 l8 0"/></g>
+              <use href="#cream-rosette" x="88" y="79"/><use href="#cream-rosette" x="135" y="61"/><use href="#cream-rosette" x="191" y="55"/><use href="#cream-rosette" x="248" y="56"/><use href="#cream-rosette" x="354" y="55"/><use href="#cream-rosette" x="414" y="56"/><use href="#cream-rosette" x="469" y="65"/><use href="#cream-rosette" x="511" y="85"/>
+              <use href="#cream-rosette" x="86" y="281"/><use href="#cream-rosette" x="143" y="301"/><use href="#cream-rosette" x="203" y="305"/><use href="#cream-rosette" x="260" y="304"/><use href="#cream-rosette" x="322" y="305"/><use href="#cream-rosette" x="383" y="305"/><use href="#cream-rosette" x="448" y="303"/><use href="#cream-rosette" x="510" y="280"/>
+              <use href="#blueberry" x="104" y="97"/><use href="#blueberry" x="177" y="84"/><use href="#blueberry" x="228" y="102"/><use href="#blueberry" x="366" y="85"/><use href="#blueberry" x="448" y="108"/><use href="#blueberry" x="494" y="133"/>
+              <use href="#blueberry" x="133" y="162"/><use href="#blueberry" x="195" y="132"/><use href="#blueberry" x="258" y="175"/><use href="#blueberry" x="344" y="144"/><use href="#blueberry" x="415" y="195"/><use href="#blueberry" x="478" y="245"/>
+              <use href="#blueberry" x="110" y="251"/><use href="#blueberry" x="177" y="266"/><use href="#blueberry" x="241" y="242"/><use href="#blueberry" x="310" y="264"/><use href="#blueberry" x="394" y="251"/><use href="#blueberry" x="450" y="275"/>
+            </g>
+          </defs>
           <g id="cake-pieces"></g>
+          <g id="guide-candle" class="guide-candle" visibility="hidden" aria-hidden="true"><rect x="290" y="12" width="18" height="48" rx="7" fill="#fff8cb" stroke="#d9a95d" stroke-width="2"/><path class="candle-flame" d="M299 8 C287 -3 300 -10 302 0 C312 -5 311 7 299 8Z" fill="#ffb43d"/></g>
           <line id="cut-preview" class="cut-preview" visibility="hidden" />
-          <g id="knife-placeholder" class="knife-placeholder" visibility="hidden" aria-hidden="true"><circle r="34" fill="#fff" stroke="#6e9fbd" stroke-width="3"/><circle cx="-8" cy="-13" r="6" fill="#50758b"/><path d="M-8 -5 L-8 12 M-8 0 L10 -4 L25 -18 M-8 1 L-21 10 M-8 12 L-18 25 M-8 12 L3 25" fill="none" stroke="#50758b" stroke-width="4" stroke-linecap="round"/><path d="M20 -14 L31 -25 L29 -13 L23 -8 Z" fill="#a9d2e9" stroke="#50758b" stroke-width="2"/><text class="placeholder-label" data-copy="artPlaceholder" x="0" y="47" text-anchor="middle">replaceable placeholder</text></g>
+          <g id="knife-character" class="knife-character" visibility="hidden" aria-hidden="true"><image class="moving-character-art knife-art" href="./assets/pictures/mizuki%20small.png" x="-55" y="-27" width="110" height="55" preserveAspectRatio="none"/></g>
         <g id="pushers" class="pushers" visibility="hidden" aria-hidden="true">
-          <g id="pusher-left" class="pusher-placeholder"><circle r="22" fill="#fff" stroke="#6e9fbd" stroke-width="2"/><circle cx="-5" cy="-8" r="4" fill="#50758b"/><path d="M-5 -2 L-5 10 M-5 1 L8 2 M-5 10 L-12 19 M-5 10 L4 19" fill="none" stroke="#50758b" stroke-width="3" stroke-linecap="round"/><text class="placeholder-label" y="34" text-anchor="middle" data-copy="artPlaceholder">replaceable placeholder</text></g>
-          <g id="pusher-right" class="pusher-placeholder"><circle r="22" fill="#fff" stroke="#6e9fbd" stroke-width="2"/><circle cx="5" cy="-8" r="4" fill="#50758b"/><path d="M5 -2 L5 10 M5 1 L-8 2 M5 10 L12 19 M5 10 L-4 19" fill="none" stroke="#50758b" stroke-width="3" stroke-linecap="round"/><text class="placeholder-label" y="34" text-anchor="middle" data-copy="artPlaceholder">replaceable placeholder</text></g>
+          <g id="pusher-left" class="pusher-character"><image class="moving-character-art" href="./assets/pictures/mizuki%20maker.png" x="-33" y="-26" width="66" height="52" preserveAspectRatio="none"/></g>
+          <g id="pusher-right" class="pusher-character"><image class="moving-character-art" href="./assets/pictures/mizuki%20maker.png" x="-33" y="-26" width="66" height="52" preserveAspectRatio="none"/></g>
         </g>
         </svg>
         <p class="cake-caption" id="cake-status" aria-live="polite">A little cake, just for you</p>
         <button class="reset-game" id="reset-game" type="button" hidden>Reset cake</button>
+      </div>
+    </section>
+    <section id="guide" class="guide" hidden role="dialog" aria-modal="true" aria-labelledby="guide-speaker" aria-live="polite">
+      <div class="guide-card">
+        <div class="guide-character" id="guide-character" aria-label="mal 人物"><img id="guide-art" class="guide-art" src="./assets/pictures/mal%20ori.png" alt=""><span id="guide-art-fallback" class="guide-art-fallback" aria-hidden="true" hidden>✿</span></div>
+        <div class="guide-dialogue">
+          <p class="guide-speaker" id="guide-speaker">mal</p>
+          <p class="guide-line" id="guide-line" aria-live="polite"></p>
+          <p class="guide-hint" id="guide-hint"></p>
+          <div class="guide-controls">
+            <button id="guide-next" type="button" data-copy="guideNext">继续 / Continue</button>
+            <button id="blow-candle" type="button" hidden data-copy="blow">吹灭蜡烛 / Blow out candle</button>
+            <button id="music-toggle" type="button" hidden data-copy="musicStop">停止音乐 / Stop music</button>
+            <button id="guide-skip" type="button" data-copy="guideSkip">跳过引导 / Skip guide</button>
+          </div>
+        </div>
       </div>
     </section>
     <footer><span data-copy="footer">Made with love</span> <span aria-hidden="true">♡</span></footer>
